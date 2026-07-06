@@ -1,0 +1,377 @@
+/* Wealth View Styles */
+
+.fox-wealth-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.fox-wealth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.fox-wealth-title h2 {
+  margin: 0;
+}
+
+.fox-wealth-quick-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-wealth-quick-stats .fox-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--fg2);
+  font-size: 14px;
+}
+
+.fox-wealth-content {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Overview */
+
+.fox-wealth-overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.fox-wealth-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.fox-wealth-card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.fox-wealth-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--fg2);
+  font-size: 14px;
+  margin-bottom: var(--space-md);
+}
+
+.fox-wealth-card-value {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--fg0);
+}
+
+.fox-wealth-card-change {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  font-size: 14px;
+}
+
+.fox-wealth-card-change .positive {
+  color: var(--success);
+}
+
+.fox-wealth-card-change .negative {
+  color: var(--error);
+}
+
+/* Cash Flow */
+
+.fox-cashflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.fox-cashflow-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.fox-cashflow-label {
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+.fox-cashflow-value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.fox-cashflow-value.positive {
+  color: var(--success);
+}
+
+.fox-cashflow-value.negative {
+  color: var(--error);
+}
+
+.fox-cashflow-net {
+  border-left: 1px solid var(--border);
+  padding-left: var(--space-md);
+}
+
+/* Allocation */
+
+.fox-wealth-section h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.fox-allocation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.fox-allocation-item {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+.fox-allocation-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.fox-allocation-icon {
+  font-size: 20px;
+}
+
+.fox-allocation-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.fox-allocation-percent {
+  font-size: 14px;
+  color: var(--fg2);
+}
+
+.fox-allocation-bar-container {
+  height: 6px;
+  background: var(--bg0);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.fox-allocation-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-normal);
+}
+
+.fox-allocation-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg0);
+}
+
+/* Accounts */
+
+.fox-wealth-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-wealth-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.fox-account-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 500;
+}
+
+.fox-account-icon {
+  font-size: 20px;
+}
+
+/* Transactions */
+
+.fox-wealth-transactions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-transactions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fox-cell-amount.credit {
+  color: var(--success);
+}
+
+.fox-cell-amount.debit {
+  color: var(--fg0);
+}
+
+/* Portfolio */
+
+.fox-wealth-portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.fox-portfolio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.fox-portfolio-value {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.fox-portfolio-label {
+  font-size: 14px;
+  color: var(--fg2);
+}
+
+.fox-portfolio-amount {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--fg0);
+}
+
+.fox-portfolio-performance {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.fox-performance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fox-performance-period {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--fg2);
+}
+
+.fox-performance-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.fox-performance-value.positive {
+  color: var(--success);
+}
+
+.fox-performance-value.negative {
+  color: var(--error);
+}
+
+/* Allocation Chart */
+
+.fox-portfolio-allocation h4 {
+  margin-bottom: var(--space-lg);
+}
+
+.fox-allocation-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-allocation-segment {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.fox-allocation-fill {
+  height: 24px;
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-normal);
+}
+
+.fox-allocation-label {
+  font-size: 14px;
+  color: var(--fg2);
+  white-space: nowrap;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .fox-wealth-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-wealth-quick-stats {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .fox-wealth-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .fox-cashflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fox-cashflow-net {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: var(--space-md);
+  }
+
+  .fox-portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-portfolio-performance {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
