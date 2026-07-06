@@ -1,6 +1,6 @@
 # FamilyOfficeOS Desktop Application
 
-> **A cross-platform Electron desktop application for Family Office OS (Fox in a Box)**
+> **A cross-platform Electron desktop application for Family Office OS**
 
 [![Electron](https://img.shields.io/badge/Electron-28+-blue.svg)](https://electronjs.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
@@ -11,7 +11,7 @@
 
 ## Overview
 
-FamilyOfficeOS Desktop is an Electron-based cross-platform application that brings the full power of the Family Office OS (Fox in a Box) wealth intelligence platform to native desktop environments. It provides family offices and high-net-worth individuals with secure, offline-capable access to their comprehensive wealth management, governance, CRM, and education systems.
+FamilyOfficeOS Desktop is an Electron-based cross-platform application that brings the full power of the Family Office OS wealth intelligence platform to native desktop environments. It provides family offices and high-net-worth individuals with secure, offline-capable access to their comprehensive wealth management, governance, CRM, and education systems.
 
 ### Key Features
 
@@ -300,6 +300,62 @@ All API calls route through the Drupal backend which proxies to container daemon
 - **Wealth**: `/api/wealth/`
 
 See [PRD.md](./PRD.md) for complete API documentation.
+
+---
+
+## Building and Releasing
+
+### Local Development Build
+
+```bash
+# Development mode with hot reload
+npm run dev
+
+# Production build (all platforms)
+npm run build
+
+# Platform-specific builds
+npm run build:mac     # macOS DMG (x64 + arm64)
+npm run build:win     # Windows NSIS installer
+npm run build:linux   # Linux AppImage
+```
+
+### Automated Releases (GitHub Actions)
+
+**Automatic Release on Tag:**
+```bash
+# Create and push a version tag
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0
+```
+
+The GitHub Actions workflow will:
+1. Build for macOS (Intel + Apple Silicon)
+2. Build for Windows (x64 + arm64)
+3. Build for Linux (AppImage)
+4. Create a GitHub Release with all artifacts
+5. Auto-generate release notes
+
+**Artifacts Created:**
+| Platform | Format | Filename Pattern |
+|----------|--------|------------------|
+| macOS | DMG | `FamilyOfficeOS-1.0.0.dmg` |
+| macOS | ZIP | `FamilyOfficeOS-1.0.0-mac.zip` |
+| Windows | NSIS | `FamilyOfficeOS Setup 1.0.0.exe` |
+| Linux | AppImage | `FamilyOfficeOS-1.0.0.AppImage` |
+
+### Manual Release Steps
+
+1. Update version in `package.json`
+2. Update `CHANGELOG.md`
+3. Commit: `git commit -m "chore: bump version to 1.0.0"`
+4. Tag: `git tag -a v1.0.0 -m "Release v1.0.0"`
+5. Push: `git push origin main --tags`
+6. GitHub Actions builds and releases automatically
+
+### Auto-Update
+
+The app includes `electron-updater` for automatic updates. New releases published to GitHub will prompt users to update.
 
 ---
 
