@@ -1,0 +1,178 @@
+/* Governance View Styles */
+
+.fox-governance-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.fox-governance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.fox-governance-title h2 {
+  margin: 0;
+}
+
+.fox-governance-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-governance-stats .fox-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--fg2);
+  font-size: 14px;
+}
+
+.fox-governance-content {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Governance List */
+
+.fox-governance-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-decision-title,
+.fox-meeting-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--fg0);
+  font-weight: 500;
+}
+
+.fox-decision-title svg,
+.fox-meeting-title svg {
+  color: var(--accent);
+}
+
+.fox-decision-meta,
+.fox-meeting-meta {
+  font-size: 12px;
+  color: var(--fg3);
+  margin-top: var(--space-xs);
+}
+
+/* Voting Progress */
+
+.fox-cell-voting {
+  min-width: 200px;
+}
+
+.fox-voting-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.fox-voting-bars {
+  display: flex;
+  height: 8px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.fox-voting-bar {
+  height: 100%;
+  transition: width var(--transition-normal);
+}
+
+.fox-voting-for {
+  background: var(--success);
+}
+
+.fox-voting-against {
+  background: var(--error);
+}
+
+.fox-voting-abstain {
+  background: var(--fg2);
+}
+
+.fox-voting-legend {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 11px;
+  color: var(--fg2);
+}
+
+.fox-voting-legend span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fox-voting-legend span::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.fox-voting-legend .fox-voting-for::before {
+  background: var(--success);
+}
+
+.fox-voting-legend .fox-voting-against::before {
+  background: var(--error);
+}
+
+.fox-voting-legend .fox-voting-abstain::before {
+  background: var(--fg2);
+}
+
+.fox-quorum-met {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.fox-quorum-pending {
+  color: var(--warning);
+}
+
+/* Attendees */
+
+.fox-attendees-count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 13px;
+  color: var(--fg2);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .fox-governance-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-governance-stats {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .fox-voting-legend {
+    flex-wrap: wrap;
+  }
+}
