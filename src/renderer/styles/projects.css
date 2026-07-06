@@ -1,0 +1,175 @@
+/* Projects View Styles */
+
+.fox-projects-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.fox-projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.fox-projects-title h2 {
+  margin: 0;
+}
+
+.fox-projects-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-projects-stats .fox-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--fg2);
+  font-size: 14px;
+}
+
+.fox-projects-content {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Projects List */
+
+.fox-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-project-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--fg0);
+  font-weight: 500;
+}
+
+.fox-project-name svg {
+  color: var(--accent);
+}
+
+.fox-project-client {
+  font-size: 12px;
+  color: var(--fg3);
+  margin-top: var(--space-xs);
+}
+
+.fox-progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.fox-progress-bar {
+  height: 6px;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  min-width: 60px;
+}
+
+.fox-progress-bar-container span {
+  font-size: 12px;
+  color: var(--fg2);
+  min-width: 36px;
+}
+
+/* Tasks Board */
+
+.fox-tasks-board {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fox-tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.fox-tasks-header h3 {
+  margin: 0;
+}
+
+.fox-task-assignee,
+.fox-task-hours,
+.fox-task-due {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 12px;
+  color: var(--fg2);
+  margin-top: var(--space-xs);
+}
+
+/* Time Tracking */
+
+.fox-time-tracking {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Timer Button */
+
+.fox-timer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.fox-timer-btn.play {
+  background: var(--success);
+  color: var(--success-fg);
+}
+
+.fox-timer-btn.pause {
+  background: var(--warning);
+  color: var(--warning-fg);
+}
+
+.fox-timer-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .fox-projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-projects-stats {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .fox-tasks-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}
