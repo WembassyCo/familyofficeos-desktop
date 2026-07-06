@@ -6,6 +6,7 @@
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6.svg)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
+[![Build and Release](https://github.com/WembassyCo/familyofficeos-desktop/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/WembassyCo/familyofficeos-desktop/actions/workflows/build-and-release.yml)
 
 ---
 
