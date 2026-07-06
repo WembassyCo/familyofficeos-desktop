@@ -1,0 +1,263 @@
+/* Sales Pipeline Styles */
+
+.fox-pipeline {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.fox-pipeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.fox-pipeline-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.fox-pipeline-title h2 {
+  margin: 0;
+}
+
+.fox-pipeline-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-pipeline-stats .fox-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--fg3);
+}
+
+.fox-pipeline-stats .fox-stat-card.success {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.fox-pipeline-stats .fox-stat-card.success .fox-stat-value {
+  color: var(--success);
+}
+
+/* Kanban Board */
+
+.fox-kanban {
+  display: flex;
+  gap: var(--space-md);
+  flex: 1;
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+}
+
+.fox-kanban-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--transition-fast);
+}
+
+.fox-kanban-column.drag-over {
+  border-color: var(--accent);
+  background: var(--bg2);
+}
+
+.fox-kanban-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  border-top: 3px solid transparent;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.fox-kanban-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  color: var(--fg0);
+}
+
+.fox-kanban-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.fox-kanban-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.fox-kanban-value {
+  font-size: 13px;
+  color: var(--fg2);
+}
+
+.fox-kanban-cards {
+  flex: 1;
+  padding: var(--space-md);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.fox-kanban-card {
+  background: var(--bg0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  cursor: grab;
+  transition: all var(--transition-fast);
+}
+
+.fox-kanban-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.fox-kanban-card:active {
+  cursor: grabbing;
+}
+
+.fox-kanban-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.fox-kanban-card-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg0);
+  flex: 1;
+}
+
+.fox-kanban-card-meta {
+  margin-bottom: var(--space-sm);
+}
+
+.fox-kanban-card-contact,
+.fox-kanban-card-org {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 13px;
+  color: var(--fg2);
+}
+
+.fox-kanban-card-org {
+  margin-top: var(--space-xs);
+  color: var(--fg3);
+}
+
+.fox-kanban-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+}
+
+.fox-kanban-card-value {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.fox-kanban-card-date {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 12px;
+  color: var(--fg3);
+}
+
+.fox-kanban-card-probability {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.fox-probability-bar {
+  height: 4px;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-fast);
+}
+
+.fox-kanban-card-probability span {
+  font-size: 12px;
+  color: var(--fg2);
+  min-width: 32px;
+}
+
+.fox-kanban-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  color: var(--fg3);
+  font-size: 13px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  min-height: 100px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .fox-kanban {
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg3) transparent;
+  }
+
+  .fox-kanban::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .fox-kanban::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .fox-kanban::-webkit-scrollbar-thumb {
+    background: var(--bg3);
+    border-radius: var(--radius-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .fox-pipeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-pipeline-stats {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
