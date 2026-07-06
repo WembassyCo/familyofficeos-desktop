@@ -1,0 +1,257 @@
+/* CSV Import Styles */
+
+.fox-csv-import {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Upload Step */
+
+.fox-upload-step {
+  padding: var(--space-xl);
+}
+
+.fox-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg1);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.fox-dropzone:hover,
+.fox-dropzone.active {
+  border-color: var(--accent);
+  background: var(--bg2);
+}
+
+.fox-dropzone-icon {
+  color: var(--fg3);
+  margin-bottom: var(--space-md);
+}
+
+.fox-dropzone p {
+  margin: 0 0 var(--space-sm);
+  color: var(--fg0);
+  font-size: 16px;
+}
+
+.fox-dropzone span {
+  font-size: 13px;
+}
+
+.fox-error-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(218, 54, 51, 0.1);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-md);
+  color: var(--error);
+}
+
+/* Mapping Step */
+
+.fox-mapping-step {
+  padding: var(--space-xl);
+}
+
+.fox-file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--bg2);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.fox-file-info span:first-of-type {
+  font-weight: 500;
+  color: var(--fg0);
+}
+
+.fox-mapping-table {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.fox-mapping-header,
+.fox-mapping-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  align-items: center;
+}
+
+.fox-mapping-header {
+  background: var(--bg2);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--fg2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fox-mapping-row {
+  border-top: 1px solid var(--border);
+}
+
+.fox-mapping-row:hover {
+  background: var(--bg2);
+}
+
+.fox-column-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.fox-sample-data {
+  font-size: 13px;
+  color: var(--fg2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fox-mapping-select {
+  width: 100%;
+}
+
+.fox-mapping-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-lg);
+}
+
+/* Preview Step */
+
+.fox-preview-step {
+  padding: var(--space-xl);
+}
+
+.fox-preview-step h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.fox-preview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.fox-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.fox-stat-card.success {
+  border-color: var(--success);
+}
+
+.fox-stat-card.warning {
+  border-color: var(--warning);
+}
+
+.fox-stat-card.info {
+  border-color: var(--info);
+}
+
+.fox-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--fg0);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.fox-stat-card.success .fox-stat-value {
+  color: #3fb950;
+}
+
+.fox-stat-card.warning .fox-stat-value {
+  color: var(--warning);
+}
+
+.fox-stat-card.info .fox-stat-value {
+  color: var(--info);
+}
+
+.fox-stat-label {
+  font-size: 13px;
+  color: var(--fg2);
+}
+
+.fox-preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+/* Importing Step */
+
+.fox-importing-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.fox-progress-ring {
+  margin-bottom: var(--space-lg);
+}
+
+.fox-progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) calc(var(--progress) * 1%),
+    var(--bg3) calc(var(--progress) * 1%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fox-progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--bg1);
+  border-radius: 50%;
+}
+
+.fox-progress-circle span {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--fg0);
+}
+
+.fox-importing-step p {
+  color: var(--fg2);
+  margin: 0;
+}
