@@ -1,0 +1,537 @@
+/* Education View Styles */
+
+.fox-education-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.fox-education-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.fox-education-title h2 {
+  margin: 0;
+}
+
+.fox-education-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-education-stats .fox-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--fg2);
+  font-size: 14px;
+}
+
+.fox-education-content {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Courses List */
+
+.fox-education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.fox-education-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.fox-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.fox-course-card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.fox-course-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.fox-course-thumbnail {
+  position: relative;
+  height: 160px;
+  background: var(--bg0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fox-course-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fox-course-placeholder {
+  font-size: 48px;
+}
+
+.fox-course-difficulty {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.fox-course-content {
+  padding: var(--space-lg);
+}
+
+.fox-course-content h4 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 16px;
+}
+
+.fox-course-description {
+  font-size: 13px;
+  color: var(--fg2);
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fox-course-meta {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: 12px;
+}
+
+.fox-course-category {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fox-course-duration {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--fg2);
+}
+
+.fox-course-stats {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 12px;
+  color: var(--fg2);
+  margin-bottom: var(--space-md);
+}
+
+.fox-course-stats span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.fox-course-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fox-course-instructor {
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+/* My Learning */
+
+.fox-my-learning {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.fox-learning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fox-learning-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.fox-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-width: 100px;
+}
+
+.fox-stat-number {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--fg0);
+}
+
+.fox-stat-label {
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+.fox-enrollments-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fox-enrollment-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.fox-enrollment-info {
+  flex: 1;
+}
+
+.fox-enrollment-info h4 {
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.fox-enrollment-meta {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+.fox-enrollment-status {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.fox-status-enrolled {
+  background: var(--info);
+  color: var(--info-fg);
+}
+
+.fox-status-in_progress {
+  background: var(--warning);
+  color: var(--warning-fg);
+}
+
+.fox-status-completed {
+  background: var(--success);
+  color: var(--success-fg);
+}
+
+.fox-status-dropped {
+  background: var(--error);
+  color: var(--error-fg);
+}
+
+.fox-enrollment-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  min-width: 200px;
+}
+
+.fox-completed-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--success);
+  font-size: 14px;
+}
+
+/* Skills */
+
+.fox-skills-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.fox-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.fox-skill-card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.fox-skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.fox-skill-header h4 {
+  margin: 0;
+}
+
+.fox-skill-level {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.fox-level-novice {
+  background: var(--fg3);
+  color: var(--bg0);
+}
+
+.fox-level-developing {
+  background: var(--info);
+  color: var(--info-fg);
+}
+
+.fox-level-proficient {
+  background: var(--success);
+  color: var(--success-fg);
+}
+
+.fox-level-expert {
+  background: var(--accent);
+  color: var(--bg0);
+}
+
+.fox-level-master {
+  background: linear-gradient(135deg, var(--accent), #fbbf24);
+  color: var(--bg0);
+}
+
+.fox-skill-description {
+  font-size: 13px;
+  color: var(--fg2);
+  margin-bottom: var(--space-md);
+}
+
+.fox-skill-progress {
+  margin-bottom: var(--space-sm);
+}
+
+.fox-skill-evidence {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+.fox-skill-target {
+  color: var(--accent);
+}
+
+/* AI Generator */
+
+.fox-ai-generator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.fox-ai-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fox-ai-icon {
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.fox-ai-header h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.fox-ai-header p {
+  color: var(--fg2);
+}
+
+.fox-ai-form {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fox-form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.fox-form-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.fox-textarea {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--bg0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--fg0);
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.fox-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.fox-select {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--bg0);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--fg0);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fox-form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+}
+
+.fox-btn-lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+.fox-ai-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fox-feature-card {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.fox-feature-card h4 {
+  margin-bottom: var(--space-sm);
+  font-size: 14px;
+}
+
+.fox-feature-card p {
+  font-size: 13px;
+  color: var(--fg2);
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .fox-education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-education-stats {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .fox-courses-grid,
+  .fox-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fox-enrollment-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-enrollment-progress {
+    width: 100%;
+  }
+
+  .fox-ai-features {
+    grid-template-columns: 1fr;
+  }
+
+  .fox-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .fox-learning-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .fox-learning-stats {
+    width: 100%;
+  }
+}
