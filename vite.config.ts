@@ -6,13 +6,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './',
+  root: 'src/renderer',
   build: {
-    outDir: 'out/renderer',
+    outDir: '../../out/renderer',
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'src/renderer/index.html')
-      }
+      input: resolve(__dirname, 'src/renderer/index.html')
     }
   },
   resolve: {
