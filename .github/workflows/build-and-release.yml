@@ -21,15 +21,8 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Install build tools
-        run: |
-          brew install python3
-          python3 --version
-
       - name: Install dependencies
         run: npm ci
-        env:
-          npm_config_build_from_source: 'true'
 
       - name: Build macOS
         run: npm run build:mac
@@ -56,16 +49,8 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Install build tools
-        run: |
-          npm install --global node-gyp
-          npm config set msvs_version 2022
-          npm config set python python3
-
       - name: Install dependencies
         run: npm ci
-        env:
-          npm_config_build_from_source: 'true'
 
       - name: Build Windows
         run: npm run build:win
