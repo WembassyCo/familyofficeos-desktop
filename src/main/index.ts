@@ -181,8 +181,9 @@ app.on('window-all-closed', () => {
 
 // Security: Prevent new window creation
 app.on('web-contents-created', (_, contents) => {
-  contents.on('new-window', (event) => {
-    event.preventDefault()
+  contents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url)
+    return { action: 'deny' }
   })
 
   // Security: Prevent navigation to external sites in main window
