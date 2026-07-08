@@ -2,6 +2,15 @@ import { BrowserWindow, screen, Tray, Menu, nativeImage, app } from 'electron'
 import { join } from 'path'
 import { is } from '@electron-toolkit/utils'
 
+// Helper to get correct path for renderer files in both dev and production
+const getRendererPath = (): string => {
+  if (is.dev && process.env.ELECTRON_RENDERER_URL) {
+    return process.env.ELECTRON_RENDERER_URL
+  }
+  // In production, use app.getAppPath() which handles ASAR correctly
+  return join(app.getAppPath(), 'out', 'renderer', 'index.html')
+}
+
 // Track quitting state manually
 let isQuitting = false
 
@@ -22,7 +31,7 @@ export class WindowManager {
       trafficLightPosition: { x: 15, y: 10 },
       ...(process.platform === 'linux' ? {} : {}),
       webPreferences: {
-        preload: join(__dirname, '../preload/index.js'),
+        preload: join(app.getAppPath(), 'out', 'preload', 'index.js'),
         sandbox: false,
         contextIsolation: true,
         nodeIntegration: false,
@@ -33,11 +42,12 @@ export class WindowManager {
     })
 
     // Load content
+    const rendererPath = getRendererPath()
     if (is.dev && process.env.ELECTRON_RENDERER_URL) {
-      this.mainWindow.loadURL(process.env.ELECTRON_RENDERER_URL)
+      this.mainWindow.loadURL(rendererPath)
       this.mainWindow.webContents.openDevTools()
     } else {
-      this.mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+      this.mainWindow.loadFile(rendererPath)
     }
 
     // Window event handlers
