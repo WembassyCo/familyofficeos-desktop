@@ -1,114 +1,88 @@
-import React, { useState, useEffect } from 'react'
-import { Lock, User, Eye, EyeOff, Fingerprint } from 'lucide-react'
+import React, { useState } from 'react'
 import { useAuthStore } from '../stores/authStore'
 import '../styles/Login.css'
 
 export const LoginScreen: React.FC = () => {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [showBiometric, setShowBiometric] = useState(false)
-  
-  const { login, unlockWithBiometrics, isLoading, error, clearError, hasStoredCredentials } = useAuthStore()
-
-  useEffect(() => {
-    // Check if we have stored credentials for biometric unlock
-    const checkStoredCredentials = async () => {
-      const hasCreds = await window.electronAPI.secureStorage.get('credentials')
-      if (hasCreds) {
-        setShowBiometric(true)
-      }
-    }
-    checkStoredCredentials()
-  }, [])
+  const { login, isLoading, error, clearError } = useAuthStore()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     clearError()
-    await login(username, password)
-  }
-
-  const handleBiometricUnlock = async () => {
-    await unlockWithBiometrics()
+    await login(email, password)
   }
 
   return (
-    <div className="fox-login-container">
-      <div className="fox-login-box">
-        <div className="fox-login-header">
-          <div className="fox-login-logo">
-            <span>🦊</span>
-          </div>
-          <h1>FamilyOfficeOS</h1>
-          <p>Sign in to your family office</p>
+    <div className="login-screen">
+      <div className="login-container">
+        <div className="login-header">
+          <div className="logo-icon">🦊</div>
+          <h1>Welcome to FamilyOfficeOS</h1>
+          <p>Secure family office management platform</p>
         </div>
 
-        {showBiometric && (
-          <button
-            className="fox-btn fox-btn-secondary fox-biometric-btn"
-            onClick={handleBiometricUnlock}
-            disabled={isLoading}
-          >
-            <Fingerprint size={20} />
-            Unlock with Biometrics
-          </button>
+        {error && (
+          <div className="error-message">
+            <span>⚠️</span> {error}
+          </div>
         )}
 
-        <form className="fox-login-form" onSubmit={handleSubmit}>
-          <div className="fox-form-group">
-            <label htmlFor="username">Username</label>
-            <div className="fox-input-wrapper">
-              <User size={16} className="fox-input-icon" />
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="input-group">
+            <label htmlFor="email">Email Address</label>
+            <div className="input-wrapper">
+              <span className="input-icon">📧</span>
               <input
-                id="username"
-                type="text"
-                className="fox-input"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                disabled={isLoading}
-                autoFocus
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@familyoffice.com"
+                required
               />
             </div>
           </div>
 
-          <div className="fox-form-group">
+          <div className="input-group">
             <label htmlFor="password">Password</label>
-            <div className="fox-input-wrapper">
-              <Lock size={16} className="fox-input-icon" />
+            <div className="input-wrapper">
+              <span className="input-icon">🔒</span>
               <input
                 id="password"
                 type={showPassword ? 'text' : 'password'}
-                className="fox-input"
-                placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                disabled={isLoading}
+                placeholder="Enter your password"
+                required
               />
               <button
                 type="button"
-                className="fox-input-action"
+                className="password-toggle"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                {showPassword ? '🙈' : '👁️'}
               </button>
             </div>
           </div>
 
-          {error && (
-            <div className="fox-login-error">
-              {error}
-            </div>
-          )}
+          <div className="form-options">
+            <label className="checkbox-label">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" className="forgot-link">Forgot password?</a>
+          </div>
 
           <button
             type="submit"
-            className="fox-btn fox-btn-primary fox-login-submit"
-            disabled={isLoading || !username || !password}
+            className="login-button"
+            disabled={isLoading}
           >
             {isLoading ? (
               <>
-                <span className="fox-loading-spinner-sm" />
+                <span className="loading-spinner" />
                 Signing in...
               </>
             ) : (
@@ -117,9 +91,12 @@ export const LoginScreen: React.FC = () => {
           </button>
         </form>
 
-        <div className="fox-login-footer">
+        <div className="login-footer">
           <p>Protected by enterprise-grade security</p>
-          <p>© 2026 Wembassy LLC</p>
+          <div className="security-badges">
+            <span>🔐 SOC 2 Compliant</span>
+            <span>🛡️ End-to-end encrypted</span>
+          </div>
         </div>
       </div>
     </div>

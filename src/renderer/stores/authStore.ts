@@ -34,20 +34,20 @@ export const useAuthStore = create<AuthState>()(
       login: async (email: string, password: string) => {
         set({ isLoading: true, error: null })
         try {
-          // Mock login for now
-          await new Promise(resolve => setTimeout(resolve, 500))
+          // For demo - auto-login with mock user
+          await new Promise(resolve => setTimeout(resolve, 800))
           set({
             user: {
               id: '1',
-              email,
-              name: 'Test User',
-              role: 'admin'
+              email: email || 'demo@wembassy.com',
+              name: 'Demo User',
+              role: 'Administrator'
             },
             isAuthenticated: true,
             isLoading: false
           })
         } catch (error) {
-          set({ error: 'Login failed', isLoading: false })
+          set({ error: 'Login failed. Please check your credentials.', isLoading: false })
         }
       },
 
@@ -57,22 +57,19 @@ export const useAuthStore = create<AuthState>()(
         set({
           user: null,
           isAuthenticated: false,
-          isLoading: false
+          isLoading: false,
+          hasStoredCredentials: false
         })
       },
 
       checkAuth: async () => {
-        // Mock auth check
-        await new Promise(resolve => setTimeout(resolve, 100))
-        // For demo, auto-login
+        // Check if user is already authenticated (e.g., from secure storage)
+        set({ isLoading: true })
+        await new Promise(resolve => setTimeout(resolve, 500))
+        // For demo, start unauthenticated
         set({
-          user: {
-            id: '1',
-            email: 'demo@wembassy.com',
-            name: 'Demo User',
-            role: 'admin'
-          },
-          isAuthenticated: true,
+          user: null,
+          isAuthenticated: false,
           isLoading: false
         })
       },
@@ -82,14 +79,13 @@ export const useAuthStore = create<AuthState>()(
       unlockWithBiometrics: async () => {
         set({ isLoading: true })
         try {
-          // Mock biometric unlock
           await new Promise(resolve => setTimeout(resolve, 300))
           set({
             user: {
               id: '1',
               email: 'demo@wembassy.com',
               name: 'Demo User',
-              role: 'admin'
+              role: 'Administrator'
             },
             isAuthenticated: true,
             isLoading: false
@@ -100,7 +96,6 @@ export const useAuthStore = create<AuthState>()(
       },
 
       checkStoredCredentials: async () => {
-        // Mock check for stored credentials
         await new Promise(resolve => setTimeout(resolve, 50))
         set({ hasStoredCredentials: false })
       }

@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { useAuthStore } from './stores/authStore'
+import React, { useEffect } from 'react'
 import { LoginScreen } from './pages/Login'
-import { MainLayout } from './components/layout/MainLayout'
-import { LoadingScreen } from './components/common/LoadingScreen'
+import { TenantSelect } from './pages/TenantSelect'
+import { MainApp } from './pages/MainApp'
+import { useAuthStore } from './stores/authStore'
+import { useAppStore } from './stores/appStore'
 import './styles/App.css'
 
 export const App: React.FC = () => {
-  const [initialized, setInitialized] = useState(false)
-  const { isAuthenticated, isLoading, checkAuth } = useAuthStore()
+  const { isAuthenticated, isLoading } = useAuthStore()
+  const { selectedTenant, showTenantSelect } = useAppStore()
 
-  useEffect(() => {
-    // Check for existing session on app start
-    const init = async () => {
-      await checkAuth()
-      setInitialized(true)
-    }
-    init()
-  }, [checkAuth])
-
-  if (!initialized || isLoading) {
-    return <LoadingScreen />
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-spinner" />
+        <p>Loading FamilyOfficeOS...</p>
+      </div>
+    )
   }
 
+  // Auth flow: Login → Tenant Select → Main App
   if (!isAuthenticated) {
     return <LoginScreen />
   }
 
-  return <MainLayout />
+  if (showTenantSelect || !selectedTenant) {
+    return <TenantSelect />
+  }
+
+  return <MainApp />
 }

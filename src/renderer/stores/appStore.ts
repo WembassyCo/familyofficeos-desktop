@@ -1,18 +1,24 @@
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-type SidebarMode = 'directory' | 'governance' | 'wealth' | 'education'
-
 interface AppState {
-  sidebarMode: SidebarMode
-  setSidebarMode: (mode: SidebarMode) => void
+  selectedTenant: string | null
+  showTenantSelect: boolean
+  sidebarMode: string
+  selectTenant: (tenantId: string) => void
+  setShowTenantSelect: (show: boolean) => void
+  setSidebarMode: (mode: string) => void
 }
 
 export const useAppStore = create<AppState>()(
   devtools(
     (set) => ({
+      selectedTenant: null,
+      showTenantSelect: true,
       sidebarMode: 'directory',
-      setSidebarMode: (mode) => set({ sidebarMode: mode })
+      selectTenant: (tenantId) => set({ selectedTenant: tenantId }),
+      setShowTenantSelect: (show) => set({ showTenantSelect: show }),
+      setSidebarMode: (mode) => set({ sidebarMode: mode }),
     }),
     { name: 'app-store' }
   )
