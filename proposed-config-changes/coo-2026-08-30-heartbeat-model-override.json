@@ -1,0 +1,32 @@
+{
+  "proposed_by": "coo (Wren)",
+  "date": "2026-08-30",
+  "description": "Override heartbeat model to use local qwen3.5:4b instead of cloud glm-5.2 for COO agent, saving cloud token costs on routine monitoring heartbeats",
+  "agent_id": "coo",
+  "change": {
+    "json_path": "agents.list[?id=coo].heartbeat.model",
+    "current_value": null,
+    "proposed_value": "ollama/qwen3.5:4b",
+    "current_heartbeat_config": {
+      "every": "1h",
+      "target": "none"
+    },
+    "proposed_heartbeat_config": {
+      "every": "1h",
+      "target": "none",
+      "model": "ollama/qwen3.5:4b"
+    }
+  },
+  "rationale": "COO heartbeat runs every hour (24 times/day) for infrastructure checks: cron job health, memory file existence, Ollama server health, dream report status, and git workspace status. These are simple shell commands with pass/fail output parsing. The local model (qwen3.5:4b) handles this easily. Using glm-5.2:cloud for these checks wastes cloud tokens. Cloud model still used for: agent coordination, weekly reports, strategy sessions, memory consolidation, cross-agent decisions, and Chris interactions. HEARTBEAT.md has been rewritten with explicit if/then decision trees optimized for the local model's capability level.",
+  "risk_assessment": "LOW — heartbeat model override only affects automated polling runs. Interactive sessions still use primary model (glm-5.2:cloud). If local model struggles with a check, it escalates per HEARTBEAT.md protocol. No risk to agent coordination, strategy, or other agent functionality.",
+  "backup_plan": "If local model heartbeats cause issues, remove the model override to revert to cloud model for all heartbeats.",
+  "reviewers_needed": 2,
+  "reviewers_requested": ["cto", "cmo"],
+  "checks_defined": [
+    "Check 1: Cron job health (consecutive errors >= 3)",
+    "Check 2: Today's memory file exists",
+    "Check 3: Ollama server responding (HTTP 200)",
+    "Check 4: Dream report status (after 4 AM CT)",
+    "Check 5: Git workspace uncommitted changes count"
+  ]
+}

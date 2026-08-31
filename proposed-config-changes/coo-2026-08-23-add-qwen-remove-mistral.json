@@ -1,0 +1,47 @@
+{
+  "title": "Add qwen3.6 to switchable models + model catalog, remove mistral:7b",
+  "date": "2026-08-23",
+  "proposedBy": "coo",
+  "summary": "qwen3.6 is installed in Ollama and working but not switchable via /models. mistral:7b is configured as a fallback but not installed — it fails when selected. This change adds qwen3.6 to both the fallback chain and the model catalog with aliases, and removes mistral:7b entirely.",
+
+  "changes": [
+    {
+      "path": "agents.defaults.model.primary",
+      "current": "ollama/glm-5.2:cloud",
+      "proposed": "ollama/glm-5.2:cloud",
+      "note": "No change — keep current primary"
+    },
+    {
+      "path": "agents.defaults.model.fallbacks",
+      "current": ["ollama/mistral:7b"],
+      "proposed": ["ollama/qwen3.6"],
+      "note": "Replace mistral:7b (not installed) with qwen3.6 (installed, 23GB local, tools+vision+thinking)"
+    },
+    {
+      "path": "agents.defaults.models",
+      "current": null,
+      "proposed": {
+        "ollama/glm-5.2:cloud": { "alias": "glm52" },
+        "ollama/qwen3.6": { "alias": "qwen" },
+        "ollama/kimi-k2.6:cloud": { "alias": "kimi" }
+      },
+      "note": "New model catalog/allowlist. Makes all 3 working models switchable via /models with short aliases. Excludes mistral:7b (not installed) and glm-5.1:cloud (not installed) and nomic-embed-text (embedding model, not a chat model)."
+    },
+    {
+      "path": "models.providers.ollama.models[5]",
+      "current": { "id": "mistral:7b", "name": "mistral:7b", "api": "openai-completions", "reasoning": false, "input": ["text"], "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }, "contextWindow": 32768, "maxTokens": 8192 },
+      "proposed": null,
+      "note": "Remove mistral:7b from provider catalog — not installed in Ollama, fails when selected"
+    }
+  ],
+
+  "impact": [
+    "All agents using agents.defaults.model will now fall back to qwen3.6 (local, 23GB) instead of mistral:7b (broken)",
+    "/models Discord picker will show 3 switchable models: glm-5.2:cloud, qwen3.6, kimi-k2.6:cloud",
+    "Short aliases: /model glm52, /model qwen, /model kimi",
+    "No agent-specific model configs are changed — agents with explicit primary/fallbacks (coo, cmo, cro, cto, etc.) keep their own settings",
+    "Note: agents with explicit fallbacks of ['ollama/glm-5.2:cloud'] are unaffected — their fallback stays the same"
+  ],
+
+  "rollback": "Restore from backup: cp ~/.openclaw/openclaw_backup_pre_qwen-mistral.json ~/.openclaw/openclaw.json && openclaw restart"
+}

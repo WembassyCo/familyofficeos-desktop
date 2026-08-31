@@ -1,0 +1,26 @@
+{
+  "proposed_by": "cmo (Mason)",
+  "date": "2026-08-30",
+  "description": "Override heartbeat model to use local qwen3.5:4B instead of cloud glm-5.2 for CMO agent, saving cloud token costs on routine monitoring heartbeats",
+  "agent_id": "cmo",
+  "change": {
+    "json_path": "agents.list[?id=cmo].heartbeat.model",
+    "current_value": null,
+    "proposed_value": "ollama/qwen3.5:4B",
+    "current_heartbeat_config": {
+      "every": "30m",
+      "target": "none"
+    },
+    "proposed_heartbeat_config": {
+      "every": "30m",
+      "target": "none",
+      "model": "ollama/qwen3.5:4B"
+    }
+  },
+  "rationale": "CMO heartbeat runs every 30 minutes (48 times/day) purely for infrastructure checks: posting queue status, LinkedIn token validity, scheduler log health, and cron job presence. These are simple shell commands with pass/fail output parsing. The local model (qwen3.5:4B) handles this easily. Using glm-5.2:cloud for these checks wastes cloud tokens. Cloud model still used for: content creation (Sundays), campaign strategy, user conversations, cross-agent coordination, escalations. HEARTBEAT.md has been rewritten to be explicit and structured for the local model's capability level with clear if/then decision trees.",
+  "risk_assessment": "LOW — heartbeat model override only affects automated polling runs. Interactive sessions still use primary model (glm-5.2:cloud). If local model struggles with a check, it escalates per HEARTBEAT.md protocol. No risk to content creation, posting, or other agent functionality.",
+  "backup_plan": "If local model heartbeats cause issues, remove the model override to revert to cloud model for all heartbeats.",
+  "reviewers_needed": 2,
+  "reviewers_requested": ["cro", "coo"],
+  "related_change": "cro-2026-08-30-heartbeat-model-override.json (same pattern, approved by Mason)"
+}

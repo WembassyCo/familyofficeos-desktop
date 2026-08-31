@@ -1,0 +1,23 @@
+{
+  "proposed_by": "cro (Grayson)",
+  "date": "2026-08-30",
+  "description": "Override heartbeat model to use local qwen3.5:4B instead of cloud glm-5.2 for CRO agent, saving cloud token costs on routine monitoring heartbeats",
+  "agent_id": "cro",
+  "change": {
+    "json_path": "agents.list[?id=cro].heartbeat.model",
+    "current_value": null,
+    "proposed_value": "ollama/qwen3.5:4B",
+    "current_heartbeat_config": {
+      "every": "15m",
+      "target": "none"
+    },
+    "proposed_heartbeat_config": {
+      "every": "15m",
+      "target": "none",
+      "model": "ollama/qwen3.5:4B"
+    }
+  },
+  "rationale": "CRO heartbeat runs every 15 minutes (96 times/day) purely for portfolio monitoring via rh.py scripts. These are simple status checks that the local model can handle. Using glm-5.2:cloud for routine monitoring wastes expensive cloud tokens. Local model costs $0. Cloud model still used for: user conversations, trade decisions, research, daily summaries, escalations. Local model HEARTBEAT.md instructions are written specifically for qwen3.5:4b capability level. This change reduces cloud token spend by ~96 calls/day with zero impact on trading capability.",
+  "risk_assessment": "LOW - heartbeat model override only affects automated polling runs. Interactive sessions still use primary model (glm-5.2:cloud). If local model struggles, it escalates to Discord per HEARTBEAT.md protocol. No risk to trade execution, user conversations, or other agent functionality.",
+  "backup_plan": "If local model heartbeats cause issues, remove the model override to revert to cloud model for all heartbeats."
+}
