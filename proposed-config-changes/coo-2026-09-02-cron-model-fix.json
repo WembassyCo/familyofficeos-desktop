@@ -1,0 +1,33 @@
+{
+  "proposedBy": "wren (COO)",
+  "date": "2026-09-02",
+  "title": "Reassign cron job models from kimi-k2.6:cloud to qwen3.5:4B",
+  "summary": "3 cron jobs are failing because they reference ollama/kimi-k2.6:cloud which is not allowed. Chris confirmed we should use qwen3.5:4B for heartbeats/crons.",
+  "changes": [
+    {
+      "file": "~/.openclaw/cron/jobs.json",
+      "job": "FOX Events Daily Research",
+      "path": "payload.model",
+      "currentValue": "ollama/kimi-k2.6:cloud",
+      "proposedValue": "ollama/qwen3.5:4B",
+      "reason": "kimi-k2.6:cloud not allowed; Chris confirmed qwen3.5:4B for crons"
+    },
+    {
+      "file": "~/.openclaw/cron/jobs.json",
+      "job": "CMO Heartbeat",
+      "path": "payload.model",
+      "currentValue": "ollama/kimi-k2.6:cloud",
+      "proposedValue": "ollama/qwen3.5:4B",
+      "reason": "kimi-k2.6:cloud not allowed; Chris confirmed qwen3.5:4B for crons"
+    },
+    {
+      "file": "~/.openclaw/cron/jobs.json",
+      "job": "CTO Heartbeat",
+      "path": "payload.model",
+      "currentValue": "ollama/kimi-k2.6:cloud",
+      "proposedValue": "ollama/qwen3.5:4B",
+      "reason": "kimi-k2.6:cloud not allowed; Chris confirmed qwen3.5:4B for crons"
+    }
+  ],
+  "note": "This modifies cron/jobs.json, not openclaw.json directly. However, following the spirit of the config governance rule, requesting 2-agent consensus before applying."
+}

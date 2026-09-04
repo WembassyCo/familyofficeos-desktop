@@ -27,7 +27,8 @@ for job in data.get('jobs', []):
     errors = state.get('consecutiveErrors', 0)
     name = job.get('name', job.get('id', 'unknown'))
     if errors >= 3:
-        alerts.append(f'{name}: {errors} consecutive errors — last: {state.get(\"lastError\", \"unknown\")}')
+        last_err = state.get('lastError', 'unknown')
+        alerts.append(f'{name}: {errors} consecutive errors — last: {last_err}')
 if alerts:
     print('ALERT:' + '|'.join(alerts))
 else:
@@ -38,6 +39,8 @@ else:
 **Decision:**
 - If output starts with `ALERT:` → Report: "⚠️ Cron Health: [list each alert]. These jobs need attention."
 - If output is `OK` → ✅ Check 1 passed, continue to Check 2.
+
+**Note:** The `state.lastRunAt` field is unreliable (often missing/stale). Use `openclaw cron list` for accurate last-run info if deeper investigation is needed.
 
 ---
 
