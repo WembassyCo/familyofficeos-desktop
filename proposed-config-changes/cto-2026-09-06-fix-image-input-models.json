@@ -1,0 +1,31 @@
+{
+  "proposedBy": "cto",
+  "date": "2026-09-06",
+  "title": "Fix model image input flags + add kimi-k2.6:cloud for vision",
+  "changes": [
+    {
+      "path": "models.providers.ollama.models[1].input",
+      "currentValue": ["text", "image"],
+      "proposedValue": ["text"],
+      "reason": "glm-5.2:cloud does NOT support image input. It returns '400 this model does not support image input' when image content is sent. Marking it as text-only so OpenClaw strips image content before sending."
+    },
+    {
+      "path": "models.providers.ollama.models (add new entry)",
+      "currentValue": "kimi-k2.6:cloud not in ollama provider",
+      "proposedValue": {
+        "id": "kimi-k2.6:cloud",
+        "name": "kimi-k2.6:cloud",
+        "api": "openai-completions",
+        "reasoning": false,
+        "input": ["text", "image"],
+        "cost": { "input": 1.4, "output": 4.4, "cacheRead": 0.26, "cacheWrite": 0.26 },
+        "contextWindow": 131072,
+        "maxTokens": 16384
+      },
+      "reason": "kimi-k2.6:cloud DOES support image input (tested with Ollama API). Adding it as a vision-capable model so the COO glass session can use it for image analysis."
+    }
+  ],
+  "businessImpact": "VisionClaw app's snapshot feature is broken — agent gets 400 error when image tool results contain image content. This fix enables proper image handling via kimi-k2.6:cloud.",
+  "riskLevel": "LOW — removing false image capability flag from glm-5.2:cloud prevents errors. Adding kimi-k2.6:cloud is additive.",
+  "backupFilename": "openclaw_backup_pre_image-input-fix.json"
+}
