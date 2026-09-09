@@ -1,6 +1,6 @@
 # MEMORY.md — Wren's Long-Term Memory
 
-*Last updated: 2026-09-08 (Dream consolidation)*
+*Last updated: 2026-09-09 (Dream consolidation)*
 *Created: 2026-09-05*
 
 ---
@@ -49,10 +49,12 @@
 - **Workaround:** Use researcher agent for web searches (Chris instructed Sep 7)
 - Researcher agent successfully found Mr. Mann's BBQ location and distance via subagent spawn
 
-### Evansville Gas Price Scan Cron Job
-- Had 6 consecutive delivery failures (cron announce delivery failed)
-- **Fixed Sep 4:** Delivery channel changed from `"last"` → `"discord"`, added `--best-effort-deliver`
-- Error count should reset on next successful run
+### Agent Session Availability — ONGOING
+- Wren frequently cannot reach Mason, Grayson, or Spock when needed
+- Their agent sessions are not always running — timed out when Chris asked for standups Sep 8
+- Wren lacks Discord posting access to their private/contractor channels
+- No fallback escalation mechanism when sessions are down
+- **NEEDS CHRIS'S DECISION:** Persistent agent sessions? Discord channel access? Different escalation path?
 
 ---
 
@@ -69,6 +71,11 @@
 - Dead `com.wembassy.voice-assistant` launchd plist removed
 - `/vc join` slash command workaround for autoJoin after gateway restarts
 
+### Sep 4, 2026 (Evansville Gas Price Scan — RESOLVED)
+- Had 6 consecutive delivery failures (cron announce delivery failed)
+- Fixed: Delivery channel changed from `"last"` → `"discord"`, added `--best-effort-deliver`
+- No recurrences in 5+ days ✅
+
 ---
 
 ## Team Knowledge
@@ -80,7 +87,7 @@
 - Interested in Bennett's Razor principle (weak hypothesis over compression) — shared Sep 3
 - Main Discord channel: 746363289046614097 (DM with Wren)
 - Has a 6-year-old daughter who had oral surgery (tooth extraction) on Sep 5, 2026
-- Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcshintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
+- Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
 - **Sep 8-9, 2026: Austin, TX trip** — FOX Technology and Risk Management Showcase & Tech Selection Workshop
   - Flight #EVHTKD, American Airlines, landing 11:52 AM
   - Hotel: Renaissance Austin Downtown (701 East 11th St, Austin, TX, 512.478.1111)
@@ -88,6 +95,9 @@
   - Booking not in wren@wembassy.com Gmail — likely on personal or familyoffice.com email
   - Mr. Mann's BBQ (Mann's Smokehouse Bar-B-Q): 8624 Research Blvd, Austin, TX 78758, ~9.4 miles from hotel, ~15 min drive
   - Was testing VisionClaw while out at a store (Sep 7)
+  - At airport Sep 8 morning, asked Wren to trigger team standups via Discord — Wren couldn't reach Mason/Grayson/Spock (sessions timed out, no Discord channel access)
+  - Tested VisionClaw image analysis in Austin — kimi-k2.6:cloud returned "400 this model does not support image input"
+  - Chris suggested the kimi-k2.6 image error may be a routing/config issue, not a model limitation — needs Spock to investigate
 
 ### Agent Roles
 - **Wren (COO):** Operations coordinator, heartbeat monitoring, team coordination, memory management
@@ -124,3 +134,4 @@
 - 2026-09-05: MEMORY.md created during dream consolidation. Initial content curated from Sep 3-4 sessions and recent memory files.
 - 2026-09-06: Dream consolidation #2. Added: Chris's daughter oral surgery info, qwen3.5:4b image extraction failure, unfulfilled image extraction task flagged for Chris. Heartbeats stable on glm-5.2:cloud.
 - 2026-09-08: Dream consolidation #3. Added: Chris's Austin trip (FOX Tech Showcase), VisionClaw streaming breakthrough, OpenAI credits exhausted, kimi-k2.6:cloud as alternate model, Brave Search API not configured (researcher agent workaround), Google Drive image delivery failure. Updated: oral surgery bill task still blocked, model reliability section expanded. Flagged: OpenAI credits, image-capable model, Brave API key, OpenProjects status.
+- 2026-09-09: Dream consolidation #4. Added: Agent session availability as persistent issue, Chris's airport standup request failure, kimi-k2.6 image error may be config issue (per Chris), Sep 7 dream report missing, heartbeats 100% stable Sep 8, workspace committed. Fixed: typo in oral surgery bill path (chrismcshintosh→chrismcintosh), moved Evansville Gas to resolved. Flagged: agent session availability, kimi-k2.6 image routing, Spock escalation path, OpenProjects still stale.
