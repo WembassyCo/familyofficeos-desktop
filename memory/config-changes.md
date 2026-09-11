@@ -63,3 +63,12 @@
 - **Approved by:** coo (Wren), cro (Grayson)
 - **Backup:** `~/.openclaw/openclaw_backup_pre_cro_add_coo.json`
 - **Rationale:** CRO needs COO access to spawn COO as sub-agent for cross-functional coordination
+
+## 2026-09-10 — CRO: Add cmo to CRO subagents allowAgents
+
+- **Agent:** Grayson (CRO) — requested by CRO, processed by CTO
+- **Change:** Added `"cmo"` to `agents.list[id=cro].subagents.allowAgents`
+- **Reason:** CRO needs to spawn CMO (Mason) as sub-agent for Facebook content generation and video content creation via Higgsfield
+- **Approved by:** Wren (COO) — APPROVED, Mason (CMO) — APPROVED
+- **Backup:** `openclaw_backup_pre_add_cmo_to_cro.json`
+- **Proposal file:** `proposed-config-changes/cro-2026-09-10-add-cmo-to-cro-allowagents.json`

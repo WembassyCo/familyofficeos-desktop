@@ -1,0 +1,12 @@
+{
+  "proposed_by": "cto",
+  "date": "2026-09-11",
+  "title": "Add CMO to CRO's allowed subagents",
+  "change": {
+    "json_path": "agents.cro.allowedSubagents",
+    "current_value": [],
+    "proposed_value": ["cmo"],
+    "reason": "Chris requested CMO be added to CRO's allowed subagents list so CRO can spawn CMO as a subagent for collaborative workflows (e.g., sales-marketing alignment, lead handoff coordination)."
+  },
+  "risk_assessment": "Low risk. Adds CMO as a spawnable subagent for CRO. Does not remove any existing capabilities. No binding, channel, or model changes."
+}
