@@ -1,0 +1,13 @@
+{
+  "proposedBy": "cto",
+  "date": "2026-09-10",
+  "description": "Add user 392523706674708485 to Discord allowFrom list. Requested by Cavemancrafting in #general for both CTO and CMO agent access.",
+  "changes": [
+    {
+      "jsonPath": "channels.discord.allowFrom",
+      "currentValue": ["user:118658938051756033", "user:1547626260111298604", "*"],
+      "proposedValue": ["user:118658938051756033", "user:1547626260111298604", "user:392523706674708485", "*"],
+      "reason": "Explicitly authorize user 392523706674708485 for Family Office Exchange work with CTO and CMO agents"
+    }
+  ]
+}

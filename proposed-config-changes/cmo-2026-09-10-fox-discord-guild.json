@@ -1,0 +1,16 @@
+{
+  "proposed_by": "cmo",
+  "date": "2026-09-10",
+  "description": "Add new Family Office Exchange Discord guild (1547624384649232404) to CMO account with access to the general channel (1547624385446158499). Chris explicitly requested CMO to work exclusively in this channel for all FOE-related tasks.",
+  "change": {
+    "path": "channels.discord.accounts.cmo.guilds.1547624384649232404",
+    "current_value": null,
+    "proposed_value": {
+      "channels": {
+        "1547624385446158499": { "allow": true }
+      }
+    }
+  },
+  "reason": "Chris explicitly requested CMO to operate in the Family Office Exchange Discord server, channel 1547624385446158499. All FOE work to be isolated to this channel.",
+  "risk": "Low — adding new guild access, no changes to existing config"
+}

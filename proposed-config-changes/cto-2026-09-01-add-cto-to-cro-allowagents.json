@@ -1,0 +1,41 @@
+{
+  "proposed_by": "cto",
+  "date": "2026-09-01",
+  "description": "Add 'cto' to CRO agent's subagents.allowAgents list",
+  "reason": "Chris (CEO) directly requested this so CTO can spawn sub-agents in CRO sessions for cross-functional technical support (e.g., CRM integration, lead import tooling).",
+  "config_path": "agents.list[id=cro].subagents.allowAgents",
+  "current_value": [
+    "outbound-strategist",
+    "discovery-coach",
+    "deal-strategist",
+    "sales-engineer",
+    "proposal-writer",
+    "contract-specialist",
+    "sales-ops",
+    "success-scout",
+    "sales-account-strategist",
+    "sales-coach",
+    "sales-deal-strategist",
+    "sales-discovery-coach",
+    "sales-pipeline-analyst",
+    "sales-proposal-strategist"
+  ],
+  "proposed_value": [
+    "outbound-strategist",
+    "discovery-coach",
+    "deal-strategist",
+    "sales-engineer",
+    "proposal-writer",
+    "contract-specialist",
+    "sales-ops",
+    "success-scout",
+    "sales-account-strategist",
+    "sales-coach",
+    "sales-deal-strategist",
+    "sales-discovery-coach",
+    "sales-pipeline-analyst",
+    "sales-proposal-strategist",
+    "cto"
+  ],
+  "risk_assessment": "LOW — Adding 'cto' to the allowAgents list only permits the CRO to spawn the CTO as a sub-agent. It does not modify models, channels, bindings, or any existing functionality. The CTO agent is already configured and running."
+}

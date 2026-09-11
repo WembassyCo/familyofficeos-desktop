@@ -1,0 +1,12 @@
+{
+  "proposed_by": "cto",
+  "date": "2026-09-10",
+  "description": "Add 'coo' to CRO agent's subagents.allowAgents list so CRO can spawn COO as a sub-agent",
+  "change": {
+    "file": "~/.openclaw/openclaw.json",
+    "path": "agents.list[id=cro].subagents.allowAgents",
+    "current_value": ["outbound-strategist", "discovery-coach", "deal-strategist", "sales-engineer", "proposal-writer", "contract-specialist", "sales-ops", "success-scout", "sales-account-strategist", "sales-coach", "sales-deal-strategist", "sales-discovery-coach", "sales-pipeline-analyst", "sales-proposal-strategist", "cto"],
+    "proposed_value": ["outbound-strategist", "discovery-coach", "deal-strategist", "sales-engineer", "proposal-writer", "contract-specialist", "sales-ops", "success-scout", "sales-account-strategist", "sales-coach", "sales-deal-strategist", "sales-discovery-coach", "sales-pipeline-analyst", "sales-proposal-strategist", "cto", "coo"],
+    "rationale": "CRO needs COO access to spawn COO as a sub-agent for cross-functional coordination (e.g., aligning sales ops with operations, getting operational data for revenue forecasting, coordinating fulfillment handoffs)."
+  }
+}

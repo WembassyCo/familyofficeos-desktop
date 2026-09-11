@@ -1,0 +1,25 @@
+{
+  "proposedBy": "cto",
+  "date": "2026-09-07",
+  "description": "Add Family Office Exchange Discord guild (1547624384649232404) to allowed guilds config and add user 1547626260111298604 to explicit allowFrom list. Requested by Cavemancrafting in #general.",
+  "changes": [
+    {
+      "jsonPath": "channels.discord.guilds.1547624384649232404",
+      "currentValue": null,
+      "proposedValue": {
+        "channels": {
+          "1547624385446158499": {
+            "allow": true
+          }
+        }
+      },
+      "reason": "Allow bot to respond in Family Office Exchange #general channel"
+    },
+    {
+      "jsonPath": "channels.discord.allowFrom",
+      "currentValue": ["user:118658938051756033", "*"],
+      "proposedValue": ["user:118658938051756033", "user:1547626260111298604", "*"],
+      "reason": "Explicitly authorize user 1547626260111298604 for Family Office Exchange work"
+    }
+  ]
+}

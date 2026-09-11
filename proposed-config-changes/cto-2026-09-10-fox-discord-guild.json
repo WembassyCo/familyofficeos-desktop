@@ -1,0 +1,19 @@
+{
+  "proposed_by": "cto",
+  "date": "2026-09-10",
+  "description": "Add new Family Office Exchange Discord guild (1547624384649232404) to CTO account with access to general, marketing, events, and web channels",
+  "change": {
+    "path": "channels.discord.accounts.cto.guilds.1547624384649232404",
+    "current_value": null,
+    "proposed_value": {
+      "channels": {
+        "1547624385446158499": { "allow": true },
+        "1547633806196875375": { "allow": true },
+        "1547633886186577990": { "allow": true },
+        "1547634022459379752": { "allow": true }
+      }
+    }
+  },
+  "reason": "Chris explicitly requested CTO bot to operate in the new Family Office Exchange Discord server. Channels: #general, #marketing, #events, #web.",
+  "risk": "Low — adding new guild access, no changes to existing config"
+}
