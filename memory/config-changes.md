@@ -29,6 +29,15 @@
 - **Backup:** `openclaw_backup_pre_fox_guild_allowlist.json`
 - **Proposal file:** `proposed-config-changes/cto-2026-09-07-fox-guild-allowlist.json`
 
+## 2026-09-10 — CTO: Add user 1548001775921930381 to allowFrom
+
+- **Agent:** Spock (CTO)
+- **Change:** Added `user:1548001775921930381` to `channels.discord.allowFrom` (before the `*` wildcard)
+- **Reason:** Requested by Cavemancrafting in FOE #general — user needs CTO and CMO agent access
+- **Approved by:** Wren (COO) — APPROVED, Mason (CMO) — APPROVED
+- **Backup:** `openclaw_backup_pre_add_user_1548001775921930381.json`
+- **Proposal file:** `proposed-config-changes/cto-2026-09-10-add-user-1548001775921930381.json`
+
 ## 2026-09-10 — CTO: Add user 392523706674708485 to allowFrom
 
 - **Agent:** Spock (CTO)
