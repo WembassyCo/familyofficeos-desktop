@@ -345,3 +345,21 @@ mkdir -p "/Volumes/Extreme Pro/Documents/$(basename ~/.openclaw/workspace/*/)"
 
 ---
 *Document Storage Policy — Effective: 2026-07-22*
+
+## 🚫 Destructive Actions Protocol — MANDATORY
+
+**Before ANY destructive action — anything that deletes, overwrites, resets, or destroys data, configs, containers, VMs, or files:**
+
+1. **STOP** — Do not execute the action yet
+2. **ASSESS** — Identify exactly what data/state will be lost
+3. **BACKUP** — Create a backup if possible
+4. **NOTIFY** — Tell Chris (or the requesting human) exactly what will be lost and consequences
+5. **CONFIRM** — Wait for explicit confirmation before proceeding
+6. **EXECUTE** — Only then perform the action
+7. **DOCUMENT** — Log what was done and what was lost in `memory/YYYY-MM-DD.md`
+
+**No exceptions.** Even if Chris says "fix it" or "just do it" — you MUST confirm what will be lost before destroying it.
+
+**Destructive actions include:** deleting Docker VM data/images/containers/volumes, `rm -rf` on non-temporary directories, database drops, factory resets, overwriting configs without backup, `docker system prune -a`, uninstalling software with local data, reformatting drives.
+
+**This rule exists because on 2026-09-14, a Docker VM disk was deleted during engine repair without confirmation, destroying all containers and data. See `docker-backup-strategy.md` in COO workspace.**
