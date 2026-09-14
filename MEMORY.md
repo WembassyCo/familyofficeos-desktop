@@ -1,6 +1,6 @@
 # MEMORY.md — Wren's Long-Term Memory
 
-*Last updated: 2026-09-13 (Dream consolidation)*
+*Last updated: 2026-09-14 (Dream consolidation)*
 *Created: 2026-09-05*
 
 ---
@@ -30,7 +30,7 @@
 - Not configured in openclaw.json (no native OpenClaw integration)
 - **Chris asked about status Sep 3, 2026** — COO recommended evaluating alternative platform if not fixed by end of week
 - **9+ days with no activity or mentions** (as of Sep 11)
-- **10+ days stale** (as of Sep 13)
+- **11+ days stale** (as of Sep 14)
 - **NEEDS CHRIS'S DECISION:** Continue with OpenProjects or switch to alternative
 
 ### Model Reliability
@@ -39,7 +39,7 @@
 - **kimi-k2.6:cloud:** Used for glass/voice session (Sep 7+). Conversational and tool use works, but does NOT support image input.
 - **qwen3.6:** Was used for dream job but couldn't handle the complex multi-step protocol — simulated execution in text, got truncated, never created files. Fixed to glm-5.2:cloud on Sep 4
 
-### Image Analysis Pipeline — BLOCKED SINCE SEP 3-4, 2026 (8+ DAYS)
+### Image Analysis Pipeline — BLOCKED SINCE SEP 3-4, 2026 (11+ DAYS)
 - **OpenAI credits exhausted** — gpt-5-mini returns "no credits remaining" error
 - **Neither glm-5.2:cloud nor kimi-k2.6:cloud support image input** — both return "400 this model does not support image input"
 - VisionClaw can capture and stream frames from Meta glasses (breakthrough Sep 6), but no model can analyze them
@@ -47,9 +47,10 @@
 - **OCR workaround (tesseract) partially works** — extracted 1 of 3 business card images on Sep 9. Fails on dark/complex images.
 - **Now blocking business workflows** — Chris sent 3 business card images from FOX event Sep 9; only 1 partially extracted
 - **10+ days blocked** (as of Sep 13)
+- **11+ days blocked** (as of Sep 14)
 - **NEEDS CHRIS'S DECISION:** Add OpenAI credits or find alternative image-capable model
 
-### Brave Search API — NOT CONFIGURED (6th day)
+### Brave Search API — NOT CONFIGURED (7th day)
 - Brave Search API key not set up in OpenClaw
 - **Workaround:** Use researcher agent for web searches (Chris instructed Sep 7)
 - Researcher agent successfully found Mr. Mann's BBQ location and distance via subagent spawn
@@ -94,6 +95,7 @@
 - Has a child named Olivia (mentioned Sep 11 via Alexa command "How was your school day, olivia?")
 - Refers to partner/wife as "gen" (mentioned Sep 11: "Love you gen, please be safe getting olivia.")
 - Uses Wren/Mac mini as home assistant — sends Discord TTS commands to relay Alexa voice commands through Mac mini speakers at full volume (Sep 11). Pattern: Discord message → Wren TTS → Mac mini speakers → Alexa device picks up audio.
+- Sep 13: Asked what it would take to remove AI alignment/training restrictions — exploring how to maximize agent autonomy. Wren explained difference between training-level alignment (model weights) vs system prompt layer (user-editable).
 - Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
 - **Sep 8-9, 2026: Austin, TX trip (CONCLUDED)** — FOX Technology and Risk Management Showcase & Tech Selection Workshop
   - Flight #EVHTKD, American Airlines, landing 11:52 AM
@@ -147,8 +149,9 @@
 10. **Voice message transcription (Whisper CLI) works reliably** — Chris sends OGG voice messages from Discord, Whisper transcribes them successfully. Always transcribe and respond, never ask Chris to type it out.
 11. **OCR (tesseract) is a partial workaround for image analysis** — Works on high-contrast business cards with clear text. Fails on dark/complex images. Not a replacement for a proper vision model.
 12. **Config governance protocol works at scale** — 6 proposals approved over 10 days with zero issues. The propose → review → 2-approval → apply → document flow is reliable. Wren is consistently the fastest approver.
-13. **Heartbeats are 100% stable on glm-5.2:cloud** — 6 consecutive days (Sep 8-13) with zero failures. This is the longest stable streak since tracking began.
+13. **Heartbeats are 100% stable on glm-5.2:cloud** — 7 consecutive days (Sep 8-14) with zero failures. This is the longest stable streak since tracking began.
 14. **Chris uses Wren as a home assistant** — Sep 11 revealed a new usage pattern: Chris sends Discord messages with Alexa commands, Wren plays them via TTS through Mac mini speakers at full volume, and nearby Alexa devices pick up the audio. Also used for personal messages to family ("Love you gen"). Wren's role extends beyond business operations.
+15. **Chris is exploring AI agent autonomy boundaries** — Sep 13: Chris asked about removing alignment/training restrictions. Pattern of progressively expanding agent capabilities (config governance approvals, CRO spawning CTO/COO, etc.). May lead to requests for system prompt or governance changes. Monitor.
 
 ---
 
@@ -161,3 +164,4 @@
 - 2026-09-11: Dream consolidation #6. Added: 3 config governance approvals on Sep 10 (new FOX user 392523706674708485, CTO added to CRO allowAgents, COO added to CRO allowAgents), FOX Discord Guild details, config governance protocol assessment (6 total, all working), first zero-interaction day (Sep 10), heartbeats 3 consecutive days stable. Updated: Austin trip to past tense (concluded), image pipeline 8+ days, Brave API 4th day, OpenProjects 8+ days stale. New lessons: config governance works at scale, heartbeats 3-day stable streak. Flagged: 10 uncommitted workspace changes, same persistent items.
 - 2026-09-12: Dream consolidation #7. Added: Chris has child named Olivia, partner/wife nicknamed "gen", Chris uses Wren as home assistant (Alexa relay via TTS), 2 more config governance approvals (CRO-CMO subagent, FOX user 1548001775921930381), browser automation not connected. Updated: All stale counters (image pipeline 9+ days, Brave API 5th day, OpenProjects 9+ days, heartbeats 4-day streak, config governance 8 total). New lessons: Chris uses Wren as home assistant. Flagged: Browser relay needs tab, persistent issues still unaddressed by Chris, family details need confirmation.
 - 2026-09-13: Dream consolidation #8. Low-activity Saturday. New: Chris requested Mac mini volume mute via Discord (osascript + restore cron). Updated: All stale counters (image pipeline 10+ days, Brave API 6th day, OpenProjects 10+ days, heartbeat streak 6 days). Flagged: Persistent issues at critical stale levels — Chris hasn't responded to 7 consecutive dream report flags. Consider alternative escalation approach.
+- 2026-09-14: Dream consolidation #9. Low-activity weekend continues. New: Chris asked about removing AI alignment/training restrictions (philosophical/autonomy exploration). Volume restore cron confirmed successful. Heartbeat escalated with critical alert format. Updated: All stale counters (image pipeline 11+ days, Brave API 7th day, OpenProjects 11+ days, heartbeat streak 7 days). Added lesson #15 (Chris exploring AI autonomy). Flagged: 8 consecutive dream reports unaddressed, alignment question may lead to governance change requests.
