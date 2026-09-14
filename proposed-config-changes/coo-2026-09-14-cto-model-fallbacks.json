@@ -1,0 +1,13 @@
+{
+  "proposedBy": "coo",
+  "date": "2026-09-14",
+  "title": "Remove local model fallbacks from CTO agent",
+  "change": {
+    "path": "agents.list[?(@.id=='cto')].model.fallbacks",
+    "currentValue": ["ollama/qwen3.5:4B", "ollama/qwen3.5:0.8b"],
+    "proposedValue": [],
+    "reason": "CTO cron and secondary sessions are falling back to qwen3.5:4B which cannot handle tool-using tasks — thinking blocks truncate mid-generation (stopReason: length), producing no usable output. Multiple sessions confirmed failing on local model. Primary model glm-5.2:cloud is stable (7+ day heartbeat streak). Removing local fallbacks ensures all CTO sessions use the cloud model exclusively."
+  },
+  "riskAssessment": "Low risk. Primary model glm-5.2:cloud has been stable for 7+ consecutive days. If cloud model goes down, CTO sessions will fail instead of falling back to an already-failing local model — net effect is the same (no working fallback either way). The current fallbacks are not providing value, only causing stuck sessions.",
+  "backupPlan": "If glm-5.2:cloud becomes unavailable, fallbacks can be re-added. Original values documented here."
+}

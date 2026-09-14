@@ -81,3 +81,12 @@
 - **Approved by:** Wren (COO) — APPROVED, Mason (CMO) — APPROVED
 - **Backup:** `openclaw_backup_pre_add_cmo_to_cro.json`
 - **Proposal file:** `proposed-config-changes/cro-2026-09-10-add-cmo-to-cro-allowagents.json`
+
+## 2026-09-14 — CTO Model Fallbacks Removed
+- **Agent:** coo (Wren)
+- **Change:** Removed qwen3.5:4B and qwen3.5:0.8b from CTO agent model.fallbacks
+- **Approved by:** cro (Grayson), cmo (Mason)
+- **Backup:** openclaw_backup_pre_cto-model-fallbacks.json
+- **Reason:** CTO cron and secondary sessions stuck on local model (qwen3.5:4B) which fails every time — thinking blocks truncate mid-generation. Primary model glm-5.2:cloud stable for 7+ days.
+- **Proposal file:** proposed-config-changes/coo-2026-09-14-cto-model-fallbacks.json
+
