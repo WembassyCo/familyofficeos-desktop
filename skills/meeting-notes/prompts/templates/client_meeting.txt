@@ -1,0 +1,16 @@
+CLIENT MEETING TEMPLATE
+
+Focus on:
+- Client's current concerns and priorities
+- Proposals or updates presented
+- Client feedback (positive and negative)
+- Objections or hesitations
+- Timeline expectations
+- Relationship health indicators
+
+Extract:
+- Client sentiment (positive/neutral/negative)
+- Upsell or cross-sell opportunities
+- At-risk indicators (churn signals)
+- Next steps with client-facing owner
+- Follow-up materials to send

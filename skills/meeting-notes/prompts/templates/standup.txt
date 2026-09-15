@@ -1,0 +1,12 @@
+STANDUP MEETING TEMPLATE
+
+Focus on:
+- What each person completed since last standup
+- What each person is working on today
+- Any blockers or impediments
+- Who needs help with what
+
+Keep it brief — standups are short. Focus on the three questions:
+1. What did you do?
+2. What are you doing?
+3. What's blocking you?

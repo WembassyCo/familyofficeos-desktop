@@ -1,0 +1,16 @@
+TECHNICAL REVIEW TEMPLATE
+
+Focus on:
+- Architecture decisions made and their rationale
+- Trade-offs discussed (performance vs. simplicity, build vs. buy, etc.)
+- Technical debt identified
+- Security considerations raised
+- Performance concerns or benchmarks discussed
+- Technology choices (frameworks, libraries, services)
+- Implementation approach agreed upon
+
+Extract:
+- Architecture Decision Records (ADRs) format
+- Trade-off matrix
+- Tech debt items with severity
+- Action items with technical owners

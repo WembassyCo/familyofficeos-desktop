@@ -1,0 +1,16 @@
+INTERVIEW TEMPLATE
+
+Focus on:
+- Candidate's responses to key questions
+- Technical skills demonstrated
+- Cultural fit indicators
+- Strengths and weaknesses observed
+- Questions the candidate asked
+
+Extract:
+- Technical assessment score (1-10)
+- Cultural fit score (1-10)
+- Communication score (1-10)
+- Overall recommendation: Strong Hire / Hire / Lean Hire / No Hire
+- Key reasons for recommendation
+- Areas to probe in next round (if any)

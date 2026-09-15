@@ -1,0 +1,16 @@
+SALES CALL TEMPLATE
+
+Focus on:
+- Prospect's pain points and challenges
+- What was demoed and their reaction
+- Budget timeline and authority signals
+- Objections raised and how they were addressed
+- Next steps and timeline
+- Deal stage assessment
+
+Extract:
+- Deal stage: Discovery / Demo / Proposal / Negotiation / Closed
+- Budget range if mentioned
+- Decision timeline
+- Key stakeholders on prospect side
+- Competitive mentions
