@@ -10,8 +10,22 @@ dist/
 
 # Environment variables
 .env
+.env.*
 .env.local
 .env.*.local
+
+# Secrets and keys
+*.key
+*.pem
+
+# OpenClaw config (contains tokens)
+openclaw.json
+
+# Config drafts
+proposed-config-changes/
+
+# Runtime state
+memory/heartbeat-state.json
 
 # IDE
 .idea/
