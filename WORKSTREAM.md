@@ -16,14 +16,17 @@ Chris has granted full autonomy with Stripe account ($0 balance) to generate and
 - [x] Polish Wembassy Intel licensing doc — created v1 (MD + HTML)
 - [x] Commit all workspace changes to git (pushed to GitHub)
 - [x] Create Wembassy Intel product one-pager — at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_OnePager.md`
-- [ ] Draft outreach templates for family offices / small businesses
-- [ ] Create Stripe payment links for productized services (Starter $500/mo, Professional $1,500/mo, Enterprise $3,000/mo)
+- [x] Draft outreach templates for family offices / small businesses — at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_Outreach_Templates.md`
+- [x] Create Stripe payment links for productized services
+  - Starter ($500/mo): https://buy.stripe.com/8x200caLX8lXbuTaL31gs00
+  - Professional ($1,500/mo): https://buy.stripe.com/4gM28kg6h1XzaqP4mF1gs01
+  - Enterprise ($3,000/mo): https://buy.stripe.com/8x26oA5rDfOpeH5aL31gs02
 
 ### Phase 2: Lead Generation (Week 2)
-- [ ] Use researcher agent (free web_fetch) to identify 10-20 target prospects
+- [ ] Researcher agent running — identifying 15-20 prospects (output: `/Volumes/Extreme Pro/Documents/coo/wembassy-intel-prospects.md`)
+- [ ] Review prospect list and prioritize
 - [ ] List relevant services on Upwork (Drupal dev, AI infrastructure, compliance)
 - [ ] Have Mason prepare LinkedIn content for Wembassy Intel
-- [ ] Set up Stripe payment links for productized services
 
 ### Phase 3: Revenue Operations (Ongoing)
 - [ ] Any revenue → Stripe account → budget-tracker.md

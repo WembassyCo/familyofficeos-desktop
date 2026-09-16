@@ -17,6 +17,8 @@ dist/
 # Secrets and keys
 *.key
 *.pem
+credentials.json
+service-account*.json
 
 # OpenClaw config (contains tokens)
 openclaw.json
