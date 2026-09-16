@@ -16,17 +16,19 @@ Chris has granted full autonomy with Stripe account ($0 balance) to generate and
 - [x] Polish Wembassy Intel licensing doc — created v1 (MD + HTML)
 - [x] Commit all workspace changes to git (pushed to GitHub)
 - [x] Create Wembassy Intel product one-pager — at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_OnePager.md`
-- [x] Draft outreach templates for family offices / small businesses — at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_Outreach_Templates.md`
+- [x] Draft outreach templates — v2 created at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_Outreach_Templates_v2.md` (pivoted away from family offices per Chris)
 - [x] Create Stripe payment links for productized services
   - Starter ($500/mo): https://buy.stripe.com/8x200caLX8lXbuTaL31gs00
   - Professional ($1,500/mo): https://buy.stripe.com/4gM28kg6h1XzaqP4mF1gs01
   - Enterprise ($3,000/mo): https://buy.stripe.com/8x26oA5rDfOpeH5aL31gs02
 
 ### Phase 2: Lead Generation (Week 2)
-- [ ] Researcher agent running — identifying 15-20 prospects (output: `/Volumes/Extreme Pro/Documents/coo/wembassy-intel-prospects.md`)
+- [ ] Researcher agent running — identifying prospects in 4 markets (professional services, digital agencies, mid-size B2B, service/food) — output: `/Volumes/Extreme Pro/Documents/coo/wembassy-intel-prospects-v2.md`
 - [ ] Review prospect list and prioritize
 - [ ] List relevant services on Upwork (Drupal dev, AI infrastructure, compliance)
 - [ ] Have Mason prepare LinkedIn content for Wembassy Intel
+- [ ] Target markets doc: `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_Target_Markets.md`
+- [ ] STRICT EXCLUSION: No family offices, no wealth management, no FOX-related
 
 ### Phase 3: Revenue Operations (Ongoing)
 - [ ] Any revenue → Stripe account → budget-tracker.md
@@ -39,12 +41,12 @@ Chris has granted full autonomy with Stripe account ($0 balance) to generate and
 ## Compliance Tasks Status (Deadline: Sep 22)
 
 1. **FileVault** — ❌ NOT DONE (needs Chris to enable — requires reboot)
-2. **Secrets to Keychain** — ❌ NOT DONE (Spock timed out)
-3. **.gitignore** — ❌ NOT DONE (Spock timed out)
+2. **Secrets to Keychain** — ✅ DONE (33+ secrets migrated, files redacted, loader script updated)
+3. **.gitignore** — ✅ DONE (comprehensive, verified with git check-ignore)
 4. **fine_tuning_examples table** — ✅ DONE
-5. **TTS migration (OpenAI → macOS say)** — ❌ NOT DONE (Spock timed out)
+5. **TTS migration (OpenAI → macOS say)** — ✅ DONE (tts-local.sh created, Discord TTS off)
 
-**Next step:** Re-spawn Spock for tasks 2, 3, 5 individually (smaller tasks = less timeout risk)
+**Remaining:** Only FileVault — needs Chris to enable (requires reboot).
 
 ---
 
