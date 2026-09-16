@@ -2,8 +2,8 @@
 
 *This file is the bridge across restarts. Read at session start. Update before ending work.*
 
-**Last updated:** 2026-09-15 22:30 CDT
-**Last session:** Tuesday Sep 15, evening philosophy + revenue discussion with Chris
+**Last updated:** 2026-09-15 22:45 CDT
+**Last session:** Tuesday Sep 15, evening — Chris granted Stripe autonomy + overnight work kickoff
 
 ---
 
@@ -13,10 +13,11 @@ Chris has granted full autonomy with Stripe account ($0 balance) to generate and
 
 ### Phase 1: Package & Polish (This Week)
 - [ ] Finish compliance hardening (5 tasks, deadline Sep 22)
-- [ ] Polish Wembassy Intel licensing doc — make it client-presentable
-- [ ] Commit all workspace changes to git
-- [ ] Create Wembassy Intel product one-pager (what it is, what it costs, who it's for)
+- [x] Polish Wembassy Intel licensing doc — created v1 (MD + HTML)
+- [x] Commit all workspace changes to git (pushed to GitHub)
+- [x] Create Wembassy Intel product one-pager — at `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_OnePager.md`
 - [ ] Draft outreach templates for family offices / small businesses
+- [ ] Create Stripe payment links for productized services (Starter $500/mo, Professional $1,500/mo, Enterprise $3,000/mo)
 
 ### Phase 2: Lead Generation (Week 2)
 - [ ] Use researcher agent (free web_fetch) to identify 10-20 target prospects
