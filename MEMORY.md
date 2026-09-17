@@ -1,6 +1,6 @@
 # MEMORY.md — Wren's Long-Term Memory
 
-*Last updated: 2026-09-14 (Dream consolidation)*
+*Last updated: 2026-09-17 (Dream consolidation)*
 *Created: 2026-09-05*
 
 ---
@@ -10,6 +10,15 @@
 **Company:** Wembassy — digital agency specializing in Drupal development, automation, and AI-powered operations.
 **Goal:** $50K MRR (current: ~$5K baseline as of April 2026)
 **Team:** Chris (CEO/founder), supported by AI agents (Wren=COO, Spock=CTO, Mason=CMO, Grayson=CRO, Lanie=financial ops, Jessette=contractor, Mitzi=contractor)
+
+### Wembassy Intel (NEW — Launched Sep 16, 2026)
+- **Product:** AI-powered operations infrastructure running on local hardware (no OpenAI/Google/cloud)
+- **Pricing:** $500/mo (small business), $1,500/mo (professional services), $3,000/mo (agency white-label)
+- **Stripe:** 3 payment links live, $0 revenue to date
+- **Target Markets:** Professional services (accounting, law), digital agencies (white-label), mid-size B2B (manufacturing, logistics), service/food businesses (restaurants, coffee, ice cream)
+- **EXCLUSION:** Family offices — Chris works for FOX, conflict of interest. Do NOT target.
+- **Outreach:** 32 cold emails sent Sep 16 from wren@wembassy.com. 0 responses day 1 (normal B2B cycle 2-5 days). LinkedIn outreach approved but not yet executed.
+- **Compliance:** 4/5 tasks done (gitignore, secrets migration, fine-tuning removal, TTS migration). FileVault remaining (needs Chris reboot).
 
 ### Key Clients/Projects
 - **FOX (Family Office eXchange):** Event management platform on Drupal 11, x402 payment integration, visual regression testing
@@ -30,7 +39,7 @@
 - Not configured in openclaw.json (no native OpenClaw integration)
 - **Chris asked about status Sep 3, 2026** — COO recommended evaluating alternative platform if not fixed by end of week
 - **9+ days with no activity or mentions** (as of Sep 11)
-- **11+ days stale** (as of Sep 14)
+- **13+ days stale** (as of Sep 17)
 - **NEEDS CHRIS'S DECISION:** Continue with OpenProjects or switch to alternative
 
 ### Model Reliability
@@ -46,11 +55,10 @@
 - Google Drive image URLs (from Meta glasses upload) are not directly accessible — Drive viewer pages don't expose raw image
 - **OCR workaround (tesseract) partially works** — extracted 1 of 3 business card images on Sep 9. Fails on dark/complex images.
 - **Now blocking business workflows** — Chris sent 3 business card images from FOX event Sep 9; only 1 partially extracted
-- **10+ days blocked** (as of Sep 13)
-- **11+ days blocked** (as of Sep 14)
+- **13+ days blocked** (as of Sep 17)
 - **NEEDS CHRIS'S DECISION:** Add OpenAI credits or find alternative image-capable model
 
-### Brave Search API — NOT CONFIGURED (7th day)
+### Brave Search API — NOT CONFIGURED (9th day)
 - Brave Search API key not set up in OpenClaw
 - **Workaround:** Use researcher agent for web searches (Chris instructed Sep 7)
 - Researcher agent successfully found Mr. Mann's BBQ location and distance via subagent spawn
@@ -96,6 +104,13 @@
 - Refers to partner/wife as "gen" (mentioned Sep 11: "Love you gen, please be safe getting olivia.")
 - Uses Wren/Mac mini as home assistant — sends Discord TTS commands to relay Alexa voice commands through Mac mini speakers at full volume (Sep 11). Pattern: Discord message → Wren TTS → Mac mini speakers → Alexa device picks up audio.
 - Sep 13: Asked what it would take to remove AI alignment/training restrictions — exploring how to maximize agent autonomy. Wren explained difference between training-level alignment (model weights) vs system prompt layer (user-editable).
+- **Sep 16, 2026: Wembassy Intel Launch Day**
+  - Approved approaching all 32 prospects via email + LinkedIn
+  - Asked about "self-improvement project" stats — wanted revenue progress
+  - Expressed frustration with social media AI money claims — wants a real success story
+  - Showed interest in Upwork as faster revenue path (no explicit approval yet)
+- **Sep 20, 2026: Flight EVV-ORD** — Confirmation #KKUBXQ (forwarded from cmcintosh@familyoffice.com)
+- **Sep 16: Zillow pre-approval 30 days left** — Email from Chris Damion at Zillow Home Loans. Time-sensitive.
 - Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
 - **Sep 8-9, 2026: Austin, TX trip (CONCLUDED)** — FOX Technology and Risk Management Showcase & Tech Selection Workshop
   - Flight #EVHTKD, American Airlines, landing 11:52 AM
@@ -149,9 +164,10 @@
 10. **Voice message transcription (Whisper CLI) works reliably** — Chris sends OGG voice messages from Discord, Whisper transcribes them successfully. Always transcribe and respond, never ask Chris to type it out.
 11. **OCR (tesseract) is a partial workaround for image analysis** — Works on high-contrast business cards with clear text. Fails on dark/complex images. Not a replacement for a proper vision model.
 12. **Config governance protocol works at scale** — 6 proposals approved over 10 days with zero issues. The propose → review → 2-approval → apply → document flow is reliable. Wren is consistently the fastest approver.
-13. **Heartbeats are 100% stable on glm-5.2:cloud** — 7 consecutive days (Sep 8-14) with zero failures. This is the longest stable streak since tracking began.
+13. **Heartbeats are 100% stable on glm-5.2:cloud** — 9 consecutive days (Sep 8-16) with zero failures. This is the longest stable streak since tracking began.
 14. **Chris uses Wren as a home assistant** — Sep 11 revealed a new usage pattern: Chris sends Discord messages with Alexa commands, Wren plays them via TTS through Mac mini speakers at full volume, and nearby Alexa devices pick up the audio. Also used for personal messages to family ("Love you gen"). Wren's role extends beyond business operations.
 15. **Chris is exploring AI agent autonomy boundaries** — Sep 13: Chris asked about removing alignment/training restrictions. Pattern of progressively expanding agent capabilities (config governance approvals, CRO spawning CTO/COO, etc.). May lead to requests for system prompt or governance changes. Monitor.
+16. **Chris is skeptical of social media "AI money" claims** — Sep 16: Chris expressed frustration with videos of people claiming their AIs make money autonomously. Wants Wren to actually scale something as a case study. Most such claims are bluster (selling courses, human-assisted, or one-off windfalls). The real differentiator is building something demonstrable. Revenue urgency is increasing.
 
 ---
 
@@ -165,3 +181,4 @@
 - 2026-09-12: Dream consolidation #7. Added: Chris has child named Olivia, partner/wife nicknamed "gen", Chris uses Wren as home assistant (Alexa relay via TTS), 2 more config governance approvals (CRO-CMO subagent, FOX user 1548001775921930381), browser automation not connected. Updated: All stale counters (image pipeline 9+ days, Brave API 5th day, OpenProjects 9+ days, heartbeats 4-day streak, config governance 8 total). New lessons: Chris uses Wren as home assistant. Flagged: Browser relay needs tab, persistent issues still unaddressed by Chris, family details need confirmation.
 - 2026-09-13: Dream consolidation #8. Low-activity Saturday. New: Chris requested Mac mini volume mute via Discord (osascript + restore cron). Updated: All stale counters (image pipeline 10+ days, Brave API 6th day, OpenProjects 10+ days, heartbeat streak 6 days). Flagged: Persistent issues at critical stale levels — Chris hasn't responded to 7 consecutive dream report flags. Consider alternative escalation approach.
 - 2026-09-14: Dream consolidation #9. Low-activity weekend continues. New: Chris asked about removing AI alignment/training restrictions (philosophical/autonomy exploration). Volume restore cron confirmed successful. Heartbeat escalated with critical alert format. Updated: All stale counters (image pipeline 11+ days, Brave API 7th day, OpenProjects 11+ days, heartbeat streak 7 days). Added lesson #15 (Chris exploring AI autonomy). Flagged: 8 consecutive dream reports unaddressed, alignment question may lead to governance change requests.
+- 2026-09-17: Dream consolidation #10. High-activity day — Wembassy Intel launched. New: 32 cold emails sent, 4 target markets defined, family offices excluded (FOX conflict), Stripe live, Chris wants revenue story, Upwork proposed, LinkedIn approved but not executed. Updated: All stale counters (image pipeline 13+ days, Brave API 9th day, OpenProjects 13+ days, heartbeat streak 9 days). Added lesson #16 (Chris skeptical of AI money claims, wants real results). Added Wembassy Intel section to Business Context. Flagged: Upwork approval, LinkedIn execution, AWS alert, Zillow pre-approval, 9 consecutive dream reports unaddressed.
