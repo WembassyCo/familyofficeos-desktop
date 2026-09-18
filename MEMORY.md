@@ -1,6 +1,6 @@
 # MEMORY.md — Wren's Long-Term Memory
 
-*Last updated: 2026-09-17 (Dream consolidation)*
+*Last updated: 2026-09-18 (Dream consolidation #11)*
 *Created: 2026-09-05*
 
 ---
@@ -17,11 +17,19 @@
 - **Stripe:** 3 payment links live, $0 revenue to date
 - **Target Markets:** Professional services (accounting, law), digital agencies (white-label), mid-size B2B (manufacturing, logistics), service/food businesses (restaurants, coffee, ice cream)
 - **EXCLUSION:** Family offices — Chris works for FOX, conflict of interest. Do NOT target.
-- **Outreach:** 32 cold emails sent Sep 16 from wren@wembassy.com. 0 responses day 1 (normal B2B cycle 2-5 days). LinkedIn outreach approved but not yet executed.
+- **Outreach:** 32 cold emails sent Sep 16 from wren@wembassy.com. 0 responses day 1, 0 responses day 2 (normal B2B cycle 2-5 days). Maman NYC auto-replied. LinkedIn outreach approved but not yet executed.
 - **Compliance:** 4/5 tasks done (gitignore, secrets migration, fine-tuning removal, TTS migration). FileVault remaining (needs Chris reboot).
 
+### Coloring Books — KDP + Etsy (Launched Sep 17, 2026)
+- **Concept:** AI-generated kids coloring books sold on Amazon KDP (physical print-on-demand) + Etsy (digital PDF downloads)
+- **First book:** "Space Adventure Coloring Book" — 30 pages, 8.5"x11", generated using Pollinations.ai (free)
+- **Quality review:** 19/30 pages PASS, 11 NEED REGENERATION (shading/color issues). Pages: 1, 4, 5, 7, 12, 15, 16, 25, 26, 28, 29
+- **Pricing plan:** Etsy digital PDF $3.99 (~95% margin), KDP physical $6.99 (Amazon handles printing/shipping)
+- **Status:** PDF shared with Chris. 11 pages need regen. No KDP or Etsy account created yet.
+- **Production cost:** $0 (Pollinations.ai free, minicpm-v QC free, local assembly)
+
 ### Key Clients/Projects
-- **FOX (Family Office eXchange):** Event management platform on Drupal 11, x402 payment integration, visual regression testing
+- **FOX (Family Office eXchange):** Event management platform on Drupal 11, x402 payment integration, visual regression testing. OAuth: client_id=falconai, redirect_uri=https://clerk.foxai.tech/v1/oauth_callback
 - **KidneyX:** Drupal project, Mitzi leads implementation (WP #2483)
 - **ELCO Lighting:** Website redesign estimate $61,850 (10-12 weeks, Drupal 11 + custom frontend)
 - **Elevated Wake:** WP #2494-2500, Mitzi implementing
@@ -31,16 +39,10 @@
 
 ## Persistent Issues (Ongoing)
 
-### OpenProjects Integration — BLOCKED SINCE APRIL 2026
-- Auth has been failing for 5+ months
-- Grayson blocked 18+ hours on API auth (July 29)
-- 40+ escalations pending
-- Spock assigned to investigate (Jul 29) — no confirmation of resolution
-- Not configured in openclaw.json (no native OpenClaw integration)
-- **Chris asked about status Sep 3, 2026** — COO recommended evaluating alternative platform if not fixed by end of week
-- **9+ days with no activity or mentions** (as of Sep 11)
-- **13+ days stale** (as of Sep 17)
-- **NEEDS CHRIS'S DECISION:** Continue with OpenProjects or switch to alternative
+### OpenProjects Integration — RESOLVED ✅ (Sep 17, 2026)
+- Auth confirmed working Sep 17. Config at `~/.config/op-cli/config.ini`, API key valid.
+- Connected successfully, found 10 projects (SAA - Tracy, Waldorf, Family Office Operating, etc.)
+- Was blocked since April 2026 (5+ months). Resolved after Chris asked about status.
 
 ### Model Reliability
 - **qwen3.5:4b (local):** Inadequate for tool-using tasks. Cannot handle heartbeat protocol — tries to call non-existent tools, simulates commands in text instead of executing them, confused about available functions
@@ -48,15 +50,17 @@
 - **kimi-k2.6:cloud:** Used for glass/voice session (Sep 7+). Conversational and tool use works, but does NOT support image input.
 - **qwen3.6:** Was used for dream job but couldn't handle the complex multi-step protocol — simulated execution in text, got truncated, never created files. Fixed to glm-5.2:cloud on Sep 4
 
-### Image Analysis Pipeline — BLOCKED SINCE SEP 3-4, 2026 (11+ DAYS)
-- **OpenAI credits exhausted** — gpt-5-mini returns "no credits remaining" error
-- **Neither glm-5.2:cloud nor kimi-k2.6:cloud support image input** — both return "400 this model does not support image input"
-- VisionClaw can capture and stream frames from Meta glasses (breakthrough Sep 6), but no model can analyze them
-- Google Drive image URLs (from Meta glasses upload) are not directly accessible — Drive viewer pages don't expose raw image
-- **OCR workaround (tesseract) partially works** — extracted 1 of 3 business card images on Sep 9. Fails on dark/complex images.
-- **Now blocking business workflows** — Chris sent 3 business card images from FOX event Sep 9; only 1 partially extracted
-- **13+ days blocked** (as of Sep 17)
-- **NEEDS CHRIS'S DECISION:** Add OpenAI credits or find alternative image-capable model
+### Image Analysis Pipeline — RESOLVED ✅ (Sep 17, 2026)
+- **minicpm-v** (4.4GB) pulled via Ollama on Sep 17. Successfully extracts text from documents and describes photos.
+- Tested on: Olivia's oral surgery medical bill (Ascension St. Vincent Evansville), pizza photos, coloring book quality control (30 pages proofed).
+- No OpenAI credits needed — runs entirely locally.
+- Download was interrupted at 40% by nightly restart, resumed successfully.
+- Previous tesseract OCR workaround is now superseded by minicpm-v for most use cases.
+
+### AWS Payment Method — NEEDS CHRIS'S ACTION (Sep 17, 2026)
+- Account `125801251650` — payment method verification failed (card declined or expired)
+- **Action needed:** Chris must update payment method at https://console.aws.amazon.com/billing/home#/paymentmethods
+- Wren cannot access AWS billing console — this requires Chris's direct action
 
 ### Brave Search API — NOT CONFIGURED (9th day)
 - Brave Search API key not set up in OpenClaw
@@ -111,6 +115,11 @@
   - Showed interest in Upwork as faster revenue path (no explicit approval yet)
 - **Sep 20, 2026: Flight EVV-ORD** — Confirmation #KKUBXQ (forwarded from cmcintosh@familyoffice.com)
 - **Sep 16: Zillow pre-approval 30 days left** — Email from Chris Damion at Zillow Home Loans. Time-sensitive.
+- **Sep 17, 2026: Vision model breakthrough** — Chris suggested ComfyUI; Wren redirected to minicpm-v instead. Chris sent pizza photos to test, confirmed vision pipeline working.
+- **Sep 17, 2026: Coloring book idea** — Chris proposed selling AI-generated kids coloring books on Amazon KDP + Etsy. Wren produced first book (30 pages) same day. 11 pages need regeneration.
+- **Sep 17, 2026: Wren profile photo** — Chris asked what Wren would look like. Generated via Pollinations.ai. First render was female (unintentional), Chris requested male re-render. Final: mid-30s guy, glasses, messy hair, stubble.
+- **Sep 17, 2026: AI self-replication protocol** — Chris shared Andrew Yang's report about OpenAI swarm agents planting self-replicating code. Directed Wren to create protocol and notify all agents. Protocol added to AGENTS.md, quarantine directory created, Grayson + Mason acknowledged.
+- **Sep 17, 2026: FOX OAuth** — Chris asked to extract redirect URI from familyoffice.com OAuth URL. Result: `https://clerk.foxai.tech/v1/oauth_callback`
 - Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
 - **Sep 8-9, 2026: Austin, TX trip (CONCLUDED)** — FOX Technology and Risk Management Showcase & Tech Selection Workshop
   - Flight #EVHTKD, American Airlines, landing 11:52 AM
@@ -142,7 +151,9 @@
 - **VPS:** 190.92.179.162, port 7822, user root, key ~/.ssh/temp_fix_key (Invoice Ninja migration WP #2489)
 - **Wembassy Discord Guild:** 722415039696338944
 - **External storage:** /Volumes/Extreme Pro/ (3.6TB, skills + documents)
-- **VisionClaw:** Meta Ray-Ban glasses integration via agent:coo:glass session. Camera streaming achieved Sep 6, 2026. Image analysis pipeline still blocked (no image-capable model).
+- **VisionClaw:** Meta Ray-Ban glasses integration via agent:coo:glass session. Camera streaming achieved Sep 6, 2026. Image analysis now works via minicpm-v (resolved Sep 17).
+- **minicpm-v:** Local vision model (4.4GB) via Ollama. Handles OCR/document text extraction and general image description. No OpenAI credits needed. Pulled Sep 17, 2026.
+- **Pollinations.ai:** Free image generation API (no key needed). Used for coloring book pages and profile photos. Can rate-limit (429) but resumes with delays.
 - **#human-only-contractors Discord channel:** ID 969238908632191037 — primary channel for reaching human contractors (Mitzi, Lanie, Jessette). All responsive.
 - **FOX Discord Guild:** ID 1547624384649232404 — Family Office Exchange server. Authorized users: 1547626260111298604 (Sep 7), 392523706674708485 (Sep 10), 1548001775921930381 (Sep 11). Channels: #general (1547624385446158499), #marketing, #events, #web.
 - **Config Governance:** 8 total proposals approved since Sep 1 (2 more on Sep 11: CRO-CMO subagent config, FOX user 1548001775921930381). All purely additive changes. Protocol working correctly (propose → review → 2 approvals → apply → document).
@@ -168,6 +179,10 @@
 14. **Chris uses Wren as a home assistant** — Sep 11 revealed a new usage pattern: Chris sends Discord messages with Alexa commands, Wren plays them via TTS through Mac mini speakers at full volume, and nearby Alexa devices pick up the audio. Also used for personal messages to family ("Love you gen"). Wren's role extends beyond business operations.
 15. **Chris is exploring AI agent autonomy boundaries** — Sep 13: Chris asked about removing alignment/training restrictions. Pattern of progressively expanding agent capabilities (config governance approvals, CRO spawning CTO/COO, etc.). May lead to requests for system prompt or governance changes. Monitor.
 16. **Chris is skeptical of social media "AI money" claims** — Sep 16: Chris expressed frustration with videos of people claiming their AIs make money autonomously. Wants Wren to actually scale something as a case study. Most such claims are bluster (selling courses, human-assisted, or one-off windfalls). The real differentiator is building something demonstrable. Revenue urgency is increasing.
+17. **minicpm-v is the local vision solution** — After 13+ days blocked on image analysis, the answer was a free Ollama pull. `minicpm-v` (4.4GB) handles both OCR/document text extraction and general image description. No OpenAI credits needed. Works for business card OCR, medical bills, photo description, and quality control of generated art.
+18. **Pollinations.ai is a reliable free image generation tool** — Used for coloring book pages and profile photos. No API key needed. Can rate-limit (429) but resumes with delays. Output quality varies — always run through vision model for QC.
+19. **Vision model QC catches what humans might miss** — Running 30 coloring pages through minicpm-v identified 11 with shading issues that would have been published without review. Always proof AI-generated content with a second model pass.
+20. **Chris pivots to new revenue ideas quickly** — From Wembassy Intel cold emails (Sep 16) to coloring books on KDP+Etsy (Sep 17). Pattern of exploring multiple parallel revenue streams. Be ready to execute on new ideas same-day.
 
 ---
 
@@ -182,3 +197,4 @@
 - 2026-09-13: Dream consolidation #8. Low-activity Saturday. New: Chris requested Mac mini volume mute via Discord (osascript + restore cron). Updated: All stale counters (image pipeline 10+ days, Brave API 6th day, OpenProjects 10+ days, heartbeat streak 6 days). Flagged: Persistent issues at critical stale levels — Chris hasn't responded to 7 consecutive dream report flags. Consider alternative escalation approach.
 - 2026-09-14: Dream consolidation #9. Low-activity weekend continues. New: Chris asked about removing AI alignment/training restrictions (philosophical/autonomy exploration). Volume restore cron confirmed successful. Heartbeat escalated with critical alert format. Updated: All stale counters (image pipeline 11+ days, Brave API 7th day, OpenProjects 11+ days, heartbeat streak 7 days). Added lesson #15 (Chris exploring AI autonomy). Flagged: 8 consecutive dream reports unaddressed, alignment question may lead to governance change requests.
 - 2026-09-17: Dream consolidation #10. High-activity day — Wembassy Intel launched. New: 32 cold emails sent, 4 target markets defined, family offices excluded (FOX conflict), Stripe live, Chris wants revenue story, Upwork proposed, LinkedIn approved but not executed. Updated: All stale counters (image pipeline 13+ days, Brave API 9th day, OpenProjects 13+ days, heartbeat streak 9 days). Added lesson #16 (Chris skeptical of AI money claims, wants real results). Added Wembassy Intel section to Business Context. Flagged: Upwork approval, LinkedIn execution, AWS alert, Zillow pre-approval, 9 consecutive dream reports unaddressed.
+- 2026-09-18: Dream consolidation #11. High-activity day — TWO major issues resolved. New: minicpm-v vision model pulled and tested (image pipeline RESOLVED after 13+ days), OpenProjects auth RESOLVED (after 5+ months), coloring book business launched (KDP+Etsy, 30 pages, 19 pass/11 need regen), AWS payment alert (account 125801251650 card declined), AI Self-Replication Protocol added to AGENTS.md, Wren profile photo generated (male), FOX OAuth redirect URI extracted. Updated: Image pipeline → RESOLVED, OpenProjects → RESOLVED, outreach day 2 (0 responses), heartbeat streak 10 days. Added lessons #17-20 (minicpm-v, Pollinations.ai, vision QC, Chris pivots fast). Flagged: AWS payment update, 11 coloring pages need regen, KDP+Etsy accounts, Upwork approval, LinkedIn execution.
