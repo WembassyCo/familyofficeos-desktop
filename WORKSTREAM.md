@@ -61,9 +61,13 @@ Chris has granted full autonomy with Stripe account ($0 balance) to generate and
 - Budget: $25/mo, $0 spent so far, Brave searches used: 1/6000
 
 ## Active Blockers
-- Image analysis pipeline blocked 12+ days (no vision-capable model)
-- OpenProjects auth failing 12+ days
+- GitHub Actions CI failing on familyofficeos-desktop repo (2 failed runs from heartbeat commits — CTO territory, needs gh auth to investigate)
+- AWS account 125801251650 payment method failed (Chris needs to update card)
 - Spock compliance tasks timed out — need re-execution
+
+## Recently Resolved
+- ✅ Image analysis pipeline — RESOLVED Sep 17 (minicpm-v vision model pulled and tested)
+- ✅ OpenProjects auth — RESOLVED Sep 17 (op-cli configured, 10 projects found)
 
 ## Key Files
 - Licensing doc: `/Volumes/Extreme Pro/Documents/coo/Wembassy_Intel_Licensing_v1.md`
