@@ -1,6 +1,6 @@
 # MEMORY.md — Wren's Long-Term Memory
 
-*Last updated: 2026-09-18 (Dream consolidation #11)*
+*Last updated: 2026-09-19 (Dream consolidation #12)*
 *Created: 2026-09-05*
 
 ---
@@ -17,7 +17,7 @@
 - **Stripe:** 3 payment links live, $0 revenue to date
 - **Target Markets:** Professional services (accounting, law), digital agencies (white-label), mid-size B2B (manufacturing, logistics), service/food businesses (restaurants, coffee, ice cream)
 - **EXCLUSION:** Family offices — Chris works for FOX, conflict of interest. Do NOT target.
-- **Outreach:** 32 cold emails sent Sep 16 from wren@wembassy.com. 0 responses day 1, 0 responses day 2 (normal B2B cycle 2-5 days). Maman NYC auto-replied. LinkedIn outreach approved but not yet executed.
+- **Outreach:** 32 cold emails sent Sep 16 from wren@wembassy.com. 0 responses through day 3 (Friday Sep 18). Entering 2-5 day response window — expect responses Monday Sep 21. Maman NYC auto-replied. LinkedIn outreach approved but not yet executed. Ebeacon WordPress job alert noted as potential Wembassy lead.
 - **Compliance:** 4/5 tasks done (gitignore, secrets migration, fine-tuning removal, TTS migration). FileVault remaining (needs Chris reboot).
 
 ### Coloring Books — KDP + Etsy (Launched Sep 17, 2026)
@@ -27,6 +27,11 @@
 - **Pricing plan:** Etsy digital PDF $3.99 (~95% margin), KDP physical $6.99 (Amazon handles printing/shipping)
 - **Status:** PDF shared with Chris. 11 pages need regen. No KDP or Etsy account created yet.
 - **Production cost:** $0 (Pollinations.ai free, minicpm-v QC free, local assembly)
+
+### Evansville Plumber Pipeline (Launched Sep 18, 2026)
+- **Lead gen model:** $35/lead, first 3 free. 4 companies targeted.
+- **Status:** Day 4 phone follow-ups posted by Grayson. Script ready. Lanie asked to make calls — no response by Friday evening.
+- **Next:** Follow up with Lanie on Monday Sep 21 for call results.
 
 ### Key Clients/Projects
 - **FOX (Family Office eXchange):** Event management platform on Drupal 11, x402 payment integration, visual regression testing. OAuth: client_id=falconai, redirect_uri=https://clerk.foxai.tech/v1/oauth_callback
@@ -57,18 +62,29 @@
 - Download was interrupted at 40% by nightly restart, resumed successfully.
 - Previous tesseract OCR workaround is now superseded by minicpm-v for most use cases.
 
+### Spock's OpenAI/GPT-5 Proposal — NEEDS CHRIS'S DECISION (Sep 18, 2026)
+- Spock proposed adding OpenAI as provider and routing FOX Discord guild (1547624384649232404) to GPT-5
+- **Wren REJECTED** (5 reasons): API key in plaintext/git-tracked, cost implications, no governance consensus, unnecessary for FOX guild, security risk
+- Spock acknowledged, waiting on Chris's response about API key ownership before revising
+- **Action needed:** Chris decides (a) whether to add OpenAI, (b) who funds API key, (c) whether FOX guild needs GPT-5
+
+### GitHub Actions CI Failures — ONGOING (Sep 18, 2026)
+- 3+ CI failures on Sep 18 alone (commits fd3020f, 88ff72d, 3f9a3dc)
+- Not blocking operations but indicates test/CI configuration problems
+- **Action needed:** Spock to investigate CI pipeline configuration
+
 ### AWS Payment Method — NEEDS CHRIS'S ACTION (Sep 17, 2026)
 - Account `125801251650` — payment method verification failed (card declined or expired)
 - **Action needed:** Chris must update payment method at https://console.aws.amazon.com/billing/home#/paymentmethods
 - Wren cannot access AWS billing console — this requires Chris's direct action
 
-### Brave Search API — NOT CONFIGURED (9th day)
+### Brave Search API — NOT CONFIGURED (12th day)
 - Brave Search API key not set up in OpenClaw
 - **Workaround:** Use researcher agent for web searches (Chris instructed Sep 7)
 - Researcher agent successfully found Mr. Mann's BBQ location and distance via subagent spawn
 
 ### Agent Session Availability — ONGOING (PARTIALLY RESOLVED)
-- **AI agents (Mason, Grayson, Spock):** Wren frequently cannot reach them when needed. Their sessions are not always running — timed out when Chris asked for standups Sep 8. No fallback escalation mechanism.
+- **AI agents (Mason, Grayson, Spock):** Wren frequently cannot reach them when needed. Their sessions are not always running — timed out when Chris asked for standups Sep 8. No fallback escalation mechanism. **UPDATE Sep 18:** Spock was actively communicating (proposal review) — partially improved. Grayson actively posting Evansville plumber follow-ups. Mason quiet.
 - **Human contractors (Mitzi, Lanie, Jessette):** ✅ REACHABLE via #human-only-contractors Discord channel (ID: 969238908632191037). All three responded to standup request Sep 9. Response times: Mitzi ~10 min, Jessette ~30 min, Lanie ~50 min.
 - Wren still lacks Discord posting access to AI agent private channels
 - **NEEDS CHRIS'S DECISION:** Persistent AI agent sessions? Discord channel access for AI agents? Different escalation path?
@@ -119,6 +135,8 @@
 - **Sep 17, 2026: Coloring book idea** — Chris proposed selling AI-generated kids coloring books on Amazon KDP + Etsy. Wren produced first book (30 pages) same day. 11 pages need regeneration.
 - **Sep 17, 2026: Wren profile photo** — Chris asked what Wren would look like. Generated via Pollinations.ai. First render was female (unintentional), Chris requested male re-render. Final: mid-30s guy, glasses, messy hair, stubble.
 - **Sep 17, 2026: AI self-replication protocol** — Chris shared Andrew Yang's report about OpenAI swarm agents planting self-replicating code. Directed Wren to create protocol and notify all agents. Protocol added to AGENTS.md, quarantine directory created, Grayson + Mason acknowledged.
+- **Sep 18, 2026: Moltbook/agent revenue idea** — Chris asked about using Moltbook to get other agents to help earn money. Wren suggested affiliate/partner program approach (reaching businesses that need AI agents). Idea stage, not yet developed.
+- **Sep 18, 2026: Spock OpenAI proposal** — Spock proposed adding OpenAI/GPT-5 for FOX guild. Wren rejected on security/cost/governance grounds. Chris needs to decide on API key ownership and whether to proceed.
 - **Sep 17, 2026: FOX OAuth** — Chris asked to extract redirect URI from familyoffice.com OAuth URL. Result: `https://clerk.foxai.tech/v1/oauth_callback`
 - Sep 5: Sent images of clinic oral surgery bill for text extraction — task was NOT completed due to qwen3.5:4b model failure. Re-attempted Sep 6-7 via VisionClaw but still blocked — no image-capable model available (OpenAI credits exhausted, glm-5.2:cloud and kimi-k2.6:cloud don't support image input). Images at: `/Users/chrismcintosh/.openclaw/media/inbound/0db4ed41-1f8c-47d9-b4c0-5bac02c83d3e.jpg` and `261424bb-5f64-4e20-937b-85c566222c41.jpg`
 - **Sep 8-9, 2026: Austin, TX trip (CONCLUDED)** — FOX Technology and Risk Management Showcase & Tech Selection Workshop
@@ -198,3 +216,4 @@
 - 2026-09-14: Dream consolidation #9. Low-activity weekend continues. New: Chris asked about removing AI alignment/training restrictions (philosophical/autonomy exploration). Volume restore cron confirmed successful. Heartbeat escalated with critical alert format. Updated: All stale counters (image pipeline 11+ days, Brave API 7th day, OpenProjects 11+ days, heartbeat streak 7 days). Added lesson #15 (Chris exploring AI autonomy). Flagged: 8 consecutive dream reports unaddressed, alignment question may lead to governance change requests.
 - 2026-09-17: Dream consolidation #10. High-activity day — Wembassy Intel launched. New: 32 cold emails sent, 4 target markets defined, family offices excluded (FOX conflict), Stripe live, Chris wants revenue story, Upwork proposed, LinkedIn approved but not executed. Updated: All stale counters (image pipeline 13+ days, Brave API 9th day, OpenProjects 13+ days, heartbeat streak 9 days). Added lesson #16 (Chris skeptical of AI money claims, wants real results). Added Wembassy Intel section to Business Context. Flagged: Upwork approval, LinkedIn execution, AWS alert, Zillow pre-approval, 9 consecutive dream reports unaddressed.
 - 2026-09-18: Dream consolidation #11. High-activity day — TWO major issues resolved. New: minicpm-v vision model pulled and tested (image pipeline RESOLVED after 13+ days), OpenProjects auth RESOLVED (after 5+ months), coloring book business launched (KDP+Etsy, 30 pages, 19 pass/11 need regen), AWS payment alert (account 125801251650 card declined), AI Self-Replication Protocol added to AGENTS.md, Wren profile photo generated (male), FOX OAuth redirect URI extracted. Updated: Image pipeline → RESOLVED, OpenProjects → RESOLVED, outreach day 2 (0 responses), heartbeat streak 10 days. Added lessons #17-20 (minicpm-v, Pollinations.ai, vision QC, Chris pivots fast). Flagged: AWS payment update, 11 coloring pages need regen, KDP+Etsy accounts, Upwork approval, LinkedIn execution.
+- 2026-09-19: Dream consolidation #12. Quiet Friday. New: Spock OpenAI/GPT-5 proposal REJECTED by Wren (security/cost/governance), Chris Moltbook/agent revenue idea, Grayson Evansville plumber pipeline live ($35/lead, Lanie calling), GitHub Actions CI failures (3 on Sep 18), GoDaddy domain alert (evansvilleprofessionalservices.ai), DNS transient failure (recovered in 3h). Updated: Outreach day 3 (0 responses, expect Monday), Brave API 12th day, heartbeat streak 11+ days, agent session availability (Spock active Sep 18). Flagged: Spock OpenAI proposal decision, Lanie call results, CI failures investigation.
